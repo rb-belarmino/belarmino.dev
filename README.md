@@ -8,6 +8,10 @@
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 [![Resend](https://img.shields.io/badge/Resend-Email_API-black?style=for-the-badge)](https://resend.com/)
 
+<div align="center">
+  <img src="./public/cover.jpg" alt="Cybernetic Portfolio Preview" width="100%" />
+</div>
+
 Bem-vindo ao código-fonte do meu portfólio pessoal. Este projeto é uma vitrine técnica projetada com uma estética **Cyber/Sci-fi** (Modo Escuro, detalhes em Neon Cyan e tipografia monoespaçada).
 
 Ele não é apenas uma página estática, mas uma aplicação web moderna construída para altíssima performance, acessibilidade e escalabilidade.
