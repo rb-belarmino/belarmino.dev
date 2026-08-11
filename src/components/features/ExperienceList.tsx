@@ -24,7 +24,7 @@ export function ExperienceList({ locale }: { locale: string }) {
       {/* Experience Timeline */}
       <section className="mb-10 relative">
         {/* Vertical Line */}
-        <div className="absolute left-[15px] md:left-1/2 top-0 bottom-0 w-[2px] bg-white/10 -translate-x-1/2 shadow-[0_0_15px_rgba(0,243,255,0.5)]">
+        <div className="absolute left-3.75 md:left-1/2 top-0 bottom-0 w-0.5 bg-white/10 -translate-x-1/2 shadow-[0_0_15px_rgba(0,243,255,0.5)]">
           <div className="h-1/3 w-full bg-primary animate-pulse"></div>
         </div>
 
@@ -75,7 +75,7 @@ export function ExperienceList({ locale }: { locale: string }) {
 
                 {/* Dot */}
                 <div
-                  className={`absolute left-[15px] md:left-1/2 -translate-x-1/2 w-4 h-4 bg-surface border-2 rounded-full z-10 transition-colors ${isEven ? 'border-primary shadow-[0_0_10px_rgba(0,243,255,0.8)] group-hover:bg-primary' : 'border-primary/50 group-hover:border-primary'} ${!isEven && 'order-1 md:order-2'}`}
+                  className={`absolute left-3.75 md:left-1/2 -translate-x-1/2 w-4 h-4 bg-surface border-2 rounded-full z-10 transition-colors ${isEven ? 'border-primary shadow-[0_0_10px_rgba(0,243,255,0.8)] group-hover:bg-primary' : 'border-primary/50 group-hover:border-primary'} ${!isEven && 'order-1 md:order-2'}`}
                 ></div>
 
                 {/* Desktop Right Side */}
@@ -131,7 +131,7 @@ export function ExperienceList({ locale }: { locale: string }) {
               key={skill}
               className="bg-white/5 border border-white/5 rounded-xl p-6 flex flex-col items-center justify-center relative overflow-hidden group"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className="absolute inset-0 bg-linear-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
               <div className="relative w-24 h-24 mb-4 flex items-center justify-center">
                 <svg
                   className="w-full h-full absolute -rotate-90"

@@ -23,7 +23,7 @@ export function HeroSection({ locale }: { locale: string }) {
 
           <h1 className="font-display font-extrabold text-5xl md:text-7xl text-on-background tracking-tight">
             {t('greeting')} <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-container to-secondary-container">
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-primary-container to-secondary-container">
               RODRIGO
             </span>
           </h1>
@@ -53,7 +53,7 @@ export function HeroSection({ locale }: { locale: string }) {
 
         {/* Visual / Graphic (Right Col) */}
         <div className="lg:col-span-5 relative mt-16 lg:mt-0 flex justify-center items-center">
-          <div className="absolute inset-0 bg-gradient-to-tr from-primary-container/20 to-secondary-container/20 blur-[100px] rounded-full z-0"></div>
+          <div className="absolute inset-0 bg-linear-to-tr from-primary-container/20 to-secondary-container/20 blur-[100px] rounded-full z-0"></div>
           <div className="relative z-10 w-64 h-64 md:w-80 md:h-80 rounded-xl overflow-hidden bg-white/5 backdrop-blur-md border border-white/10">
             <img
               className="w-full h-full object-cover mix-blend-screen opacity-80"

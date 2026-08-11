@@ -1,31 +1,31 @@
-import type { Metadata } from "next";
-import { Inter, Sora, JetBrains_Mono } from "next/font/google";
-import "./globals.css";
+import type { Metadata } from 'next'
+import { Inter, Sora, JetBrains_Mono } from 'next/font/google'
+import './globals.css'
 
 const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-});
+  variable: '--font-inter',
+  subsets: ['latin']
+})
 
 const sora = Sora({
-  variable: "--font-sora",
-  subsets: ["latin"],
-});
+  variable: '--font-sora',
+  subsets: ['latin']
+})
 
 const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-jetbrains-mono",
-  subsets: ["latin"],
-});
+  variable: '--font-jetbrains-mono',
+  subsets: ['latin']
+})
 
 export const metadata: Metadata = {
-  title: "Portfólio de Desenvolvedor",
-  description: "Portfólio de Rodrigo Belarmino",
-};
+  title: 'Portfólio de Desenvolvedor',
+  description: 'Portfólio de Rodrigo Belarmino'
+}
 
 export default function RootLayout({
-  children,
+  children
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
     <html
@@ -42,5 +42,5 @@ export default function RootLayout({
         {children}
       </body>
     </html>
-  );
+  )
 }

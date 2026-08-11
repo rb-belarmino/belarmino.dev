@@ -25,7 +25,7 @@ export function PortfolioPage({
 function PortfolioContent({ locale }: { locale: string }) {
   return (
     <div className="flex flex-col min-h-screen pt-16 pb-20 md:pb-0 md:pl-72 w-full">
-      <div className="w-full max-w-[1440px] mx-auto px-4 md:px-12 flex flex-col gap-24 relative z-10">
+      <div className="w-full max-w-360 mx-auto px-4 md:px-12 flex flex-col gap-24 relative z-10">
         <HeroSection locale={locale} />
 
         <div id="projects" className="scroll-mt-24">

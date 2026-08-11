@@ -58,7 +58,7 @@ export function ContactForm() {
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="w-full max-w-2xl bg-white/[0.03] backdrop-blur-md border border-white/10 rounded-xl p-8 md:p-12 shadow-2xl relative overflow-hidden"
+        className="w-full max-w-2xl bg-white/3 backdrop-blur-md border border-white/10 rounded-xl p-8 md:p-12 shadow-2xl relative overflow-hidden"
       >
         {/* Decorative corner elements */}
         <div className="absolute top-0 left-0 w-4 h-4 border-t border-l border-primary/50"></div>
@@ -146,7 +146,7 @@ export function ContactForm() {
           <button
             type="submit"
             disabled={status === 'submitting'}
-            className="w-full bg-primary text-black font-mono text-xs font-bold tracking-widest py-4 px-6 rounded hover:shadow-[0_0_20px_rgba(0,243,255,0.2)] hover:-translate-y-[2px] transition-all flex items-center justify-center gap-2"
+            className="w-full bg-primary text-black font-mono text-xs font-bold tracking-widest py-4 px-6 rounded hover:shadow-[0_0_20px_rgba(0,243,255,0.2)] hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2"
           >
             <span className="material-symbols-outlined">send</span>
             {status === 'submitting'
