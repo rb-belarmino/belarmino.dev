@@ -25,9 +25,9 @@ Com base na estrutura de pastas de design identificada, o escopo da primeira ver
 
 Com base no alinhamento inicial:
 - **Internacionalização**: O site deverá suportar Português e Inglês, com opção para o usuário alternar o idioma.
-- **Armazenamento de Dados**: Durante o desenvolvimento, os dados de projetos e experiências serão "mockados" diretamente nos componentes da interface. (No futuro, serão substituídos por dados reais do GitHub/LinkedIn).
+- **Armazenamento de Dados**: Os dados de projetos e experiências foram preenchidos estaticamente com informações reais obtidas a partir do Currículo em PDF e do perfil oficial no GitHub do usuário.
 - **Design System**: As regras visuais, cores e tipografia (`Sora`, `Inter`, `JetBrains Mono`) devem seguir estritamente o definido em `.docs/design/stitch_modern_dark_tech_portfolio/synthetic_intelligence_portfolio/DESIGN.md`.
-- **Formulário de Contato**: O envio de mensagens usará uma integração real (a ser definida no plano técnico, ex: Formspree/Resend/EmailJS) para envio dos dados.
+- **Formulário de Contato**: O envio de mensagens utiliza o SDK do Resend injetado numa API Route Server-Side, entregando e-mails estilizados com HTML estético (tema Cybernetic).
 
 ## 5. Critérios de Aceite (Gerais)
 - [ ] O layout implementado deve ser fiel (pixel perfect na medida do possível usando Tailwind CSS) aos HTMLs providos em `.docs/design/stitch_modern_dark_tech_portfolio`.

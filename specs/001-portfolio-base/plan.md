@@ -1,11 +1,11 @@
 # Plano de Implementação (Spec-Kit)
 
 ## [Goal Description]
-Construir o portfólio de desenvolvedor estático usando Next.js, com suporte a múltiplos idiomas (i18n), animações via Framer Motion e envio estático de formulário. O objetivo é fornecer uma vitrine técnica premium e modularizada de acordo com o Design System fornecido (`DESIGN.md`).
+Construir o portfólio de desenvolvedor estático usando Next.js, com suporte a múltiplos idiomas (i18n), animações via Framer Motion e envio de e-mails via API Route (Resend). O objetivo é fornecer uma vitrine técnica premium e modularizada de acordo com o Design System fornecido (`DESIGN.md`).
 
 ## User Review Required
 > [!IMPORTANT]
-> Verifique se as dependências (Framer Motion, next-intl) e a estratégia de hospedagem (100% estático via Vercel/GitHub Pages) estão alinhadas com a sua expectativa financeira e técnica. Confirme também se podemos utilizar a conta padrão do Formspree.
+> Verifique se as dependências (Framer Motion, next-intl) e a estratégia de hospedagem estão alinhadas com a sua expectativa financeira e técnica. Confirme se configurou corretamente a chave de API do Resend no `.env.local` para recebimento de e-mails.
 
 ## Open Questions
 - Não há mais perguntas em aberto, tudo foi alinhado no passo de especificação!
@@ -43,8 +43,11 @@ Componentes base implementando o visual *Glassmorphism* (usando `backdrop-blur`)
 #### [NEW] `src/components/features/HeroSection.tsx`, `ProjectGrid.tsx`, `ExperienceList.tsx`
 Seções maiores usando `framer-motion` para transições de entrada quando entrarem na viewport (scroll reveals).
 
-#### [NEW] `src/components/features/ContactForm.tsx`
-Formulário estático realizando um `POST` no endpoint do **Formspree**, sem a necessidade de instanciar backend próprio.
+#### [NEW] `src/components/features/ContactForm.tsx` e `src/app/api/contact/route.ts`
+Formulário realizando chamadas para a nossa API Route protegida, se comunicando de forma segura com o **Resend SDK**, renderizando um template HTML temático (`[SYSTEM_ALERT]`).
+
+#### [NEW] `src/app/icon.svg`
+Favicon vetorial gerado dinamicamente via código SVG com o tema Cybernetic (`>_`).
 
 ### Dados Estáticos
 Mocks locais baseados em TypeScript constante para facilitar futura integração com um CMS.
@@ -63,5 +66,5 @@ Exportação dos dados de mock (Ex: título, descrição, tags, imagem, repo).
 
 ### Manual Verification
 - Testar troca de idiomas entre `/` e `/en/`.
-- Preencher formulário de contato e observar se o payload do Formspree é engatilhado.
+- Preencher formulário de contato e observar se o payload é enviado pelo Next.js API Routes e chega estilizado via Resend.
 - Testar em mobile view a responsividade da grade de projetos.

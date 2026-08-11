@@ -14,35 +14,47 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    id: 'ai-dev-tasks',
-    title: 'AI Dev Tasks',
+    id: 'vizin',
+    title: 'Vizin',
     description: {
-      pt: 'Um sistema de gerenciamento de tarefas otimizado para orquestrar agentes de desenvolvimento de Inteligência Artificial.',
-      en: 'A task management system optimized for managing and orchestrating Artificial Intelligence dev agents.'
+      pt: 'Aplicação e plataforma interativa focada na comunidade e engajamento local.',
+      en: 'Interactive application and platform focused on local community and engagement.'
     },
-    technologies: ['AI', 'TypeScript', 'Python'],
+    technologies: ['Frontend', 'HTML', 'JS/TS'],
     imageUrl: '',
-    repoUrl: 'https://github.com/rb-belarmino/ai-dev-tasks',
-    date: '2024'
+    repoUrl: 'https://github.com/rb-belarmino/vizin',
+    date: '2023'
   },
   {
-    id: 'spec-kit',
-    title: 'Spec-Kit',
+    id: 'bot-slack',
+    title: 'Slack Bot Integration',
     description: {
-      pt: 'Toolkit arquitetural avançado para iniciar o desenvolvimento de software guiado por especificações (Spec-Driven Development).',
-      en: 'Advanced architectural toolkit to help you get started with Spec-Driven Development (SDD).'
+      pt: 'Integração automatizada via bot para o Slack visando agilizar operações e comunicação corporativa.',
+      en: 'Automated bot integration for Slack aimed at streamlining operations and corporate communication.'
     },
-    technologies: ['Architecture', 'Tooling', 'SDD'],
+    technologies: ['Bot', 'Slack API', 'Node.js'],
     imageUrl: '',
-    repoUrl: 'https://github.com/rb-belarmino/spec-kit',
-    date: '2024'
+    repoUrl: 'https://github.com/rb-belarmino/bot-slack',
+    date: '2023'
+  },
+  {
+    id: 'nosso-quintal-bar',
+    title: 'Nosso Quintal Bar',
+    description: {
+      pt: 'Plataforma web comercial para um bar e restaurante, otimizada e hospedada via Vercel.',
+      en: 'Commercial web platform for a bar and restaurant, optimized and hosted via Vercel.'
+    },
+    technologies: ['HTML/CSS', 'Frontend', 'Vercel'],
+    imageUrl: '',
+    repoUrl: 'https://github.com/rb-belarmino/nosso_quintal-bar',
+    date: '2022'
   },
   {
     id: 'wtc-messenger',
     title: 'WTCMessenger',
     description: {
-      pt: 'Aplicativo de comunicação corporativa nativo, englobando o desenvolvimento móvel e integração de APIs complexas.',
-      en: 'Native corporate communication application encompassing mobile development and complex API integrations.'
+      pt: 'Aplicativo de comunicação corporativa nativo, englobando desenvolvimento móvel em Swift e backend em Java.',
+      en: 'Native corporate communication application encompassing mobile development in Swift and Java backend.'
     },
     technologies: ['Swift', 'Java', 'Mobile'],
     imageUrl: '',
@@ -53,8 +65,8 @@ export const projects: Project[] = [
     id: 'waste-reporting',
     title: 'Waste Reporting System',
     description: {
-      pt: 'Sistema corporativo robusto para emissão e gestão de relatórios, desenhado para fluxos de dados de alta disponibilidade.',
-      en: 'Robust corporate system for report generation and management, designed for high-availability data flows.'
+      pt: 'Sistema corporativo robusto para emissão e gestão de relatórios sustentáveis de resíduos.',
+      en: 'Robust corporate system for the generation and management of sustainable waste reports.'
     },
     technologies: ['C#', '.NET', 'Enterprise'],
     imageUrl: '',

@@ -122,10 +122,10 @@ export function ExperienceList({ locale }: { locale: string }) {
         </h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {[
-            'Python / Clean Arch',
-            'Azure / GCP / OCI',
-            'Infra / DevOps',
-            'AI Integration'
+            'Node.js / TS / React',
+            'Java / C# / .NET',
+            'Clean Architecture',
+            'Azure / GCP / OCI'
           ].map((skill, index) => (
             <div
               key={skill}

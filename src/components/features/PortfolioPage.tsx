@@ -15,7 +15,11 @@ export function PortfolioPage({
   messages: any
 }) {
   return (
-    <NextIntlClientProvider locale={locale} messages={messages}>
+    <NextIntlClientProvider
+      locale={locale}
+      messages={messages}
+      timeZone="America/Sao_Paulo"
+    >
       <Navigation locale={locale} />
       <PortfolioContent locale={locale} />
     </NextIntlClientProvider>

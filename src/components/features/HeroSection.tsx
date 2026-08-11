@@ -16,9 +16,7 @@ export function HeroSection({ locale }: { locale: string }) {
             <span className="material-symbols-outlined text-[16px]">
               chevron_right
             </span>
-            <span className="animate-pulse">
-              System.out.println("Hello, World");
-            </span>
+            <span className="animate-pulse">console.log("Hello, World!");</span>
           </div>
 
           <h1 className="font-display font-extrabold text-5xl md:text-7xl text-on-background tracking-tight">
@@ -56,9 +54,9 @@ export function HeroSection({ locale }: { locale: string }) {
           <div className="absolute inset-0 bg-linear-to-tr from-primary-container/20 to-secondary-container/20 blur-[100px] rounded-full z-0"></div>
           <div className="relative z-10 w-64 h-64 md:w-80 md:h-80 rounded-xl overflow-hidden bg-white/5 backdrop-blur-md border border-white/10">
             <img
-              className="w-full h-full object-cover mix-blend-screen opacity-80"
-              alt="Cube"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBC_1CJI0yiLDsfbIAsaZS2YkOQ3NN5Z4NZNKksv8DdntWKr-TQ_dmp0FBhRSdabsEpLWq1V9Ts0mLNhLvRzN0gnx1oX6o-e5_xQvFEMBDuFDUgxGoH3FIgoopgCv2r2Oqb7QarIUI_lv9wvIwA4yd-OQynH1pqOk3kJDL3qF8GuX4wMLRwwPbIYEMhWCUHw0P8__TTabz8rhWRPRJB8Oqu7JvJPntxnfoCG39pXu3Vu6duweu03qw"
+              className="w-full h-full object-cover grayscale opacity-90 hover:grayscale-0 transition-all duration-500"
+              alt="Rodrigo Belarmino"
+              src="https://github.com/rb-belarmino.png"
             />
           </div>
         </div>
@@ -80,22 +78,22 @@ export function HeroSection({ locale }: { locale: string }) {
           <div className="bg-white/5 backdrop-blur-md border border-white/10 p-6 rounded-xl flex flex-col items-center justify-center gap-4 hover:border-primary/50 transition-colors group">
             <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:shadow-[0_0_20px_rgba(0,243,255,0.2)] transition-all">
               <span className="material-symbols-outlined text-primary text-[32px]">
-                smart_toy
+                data_object
               </span>
             </div>
             <span className="font-mono text-sm text-on-surface text-center leading-tight">
-              Python / AI
+              Node.js / TS
             </span>
           </div>
           {/* Tech Item */}
           <div className="bg-white/5 backdrop-blur-md border border-white/10 p-6 rounded-xl flex flex-col items-center justify-center gap-4 hover:border-primary/50 transition-colors group">
             <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:shadow-[0_0_20px_rgba(0,243,255,0.2)] transition-all">
               <span className="material-symbols-outlined text-primary text-[32px]">
-                architecture
+                code_blocks
               </span>
             </div>
             <span className="font-mono text-sm text-on-surface text-center leading-tight">
-              Clean Architecture
+              Java / C#
             </span>
           </div>
           {/* Tech Item */}

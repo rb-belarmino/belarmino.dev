@@ -35,7 +35,7 @@ export function ContactForm() {
   const onSubmit = async (data: FormData) => {
     setStatus('submitting')
     try {
-      const response = await fetch('https://formspree.io/f/my-dummy-endpoint', {
+      const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
@@ -176,9 +176,9 @@ export function ContactForm() {
           </p>
           <div className="flex gap-6">
             <a
-              href="https://github.com/rodrigobelarmino"
+              href="https://github.com/rb-belarmino"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="w-12 h-12 rounded-full border border-primary/30 flex items-center justify-center text-primary hover:bg-primary/10 hover:border-primary hover:shadow-[0_0_15px_rgba(0,243,255,0.3)] transition-all group"
             >
               <span className="material-symbols-outlined group-hover:scale-110 transition-transform">
@@ -186,9 +186,9 @@ export function ContactForm() {
               </span>
             </a>
             <a
-              href="https://linkedin.com/in/rodrigobelarmino"
+              href="https://www.linkedin.com/in/rodrigo-belarmino/"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="w-12 h-12 rounded-full border border-primary/30 flex items-center justify-center text-primary hover:bg-primary/10 hover:border-primary hover:shadow-[0_0_15px_rgba(0,243,255,0.3)] transition-all group"
             >
               <span className="material-symbols-outlined group-hover:scale-110 transition-transform">

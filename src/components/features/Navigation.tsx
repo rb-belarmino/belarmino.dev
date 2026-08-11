@@ -94,15 +94,15 @@ export function Navigation({ locale }: { locale: string }) {
         <div className="p-6 border-b border-white/5 flex flex-col items-start gap-4">
           <img
             className="w-16 h-16 rounded-full border-2 border-primary/30 object-cover shadow-[0_0_15px_rgba(0,243,255,0.2)]"
-            alt="Dev Avatar"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuClsB7CYvFmBHPVZAKdquxEMxuLtFnwxy1sKkxYTcGzXb7iLz1EEVT-mij6TZ98DJbv9HlGUsMWEihs0tENRjNm-ZINXvbcUdgFQpF3YdvOt5iHeugyfiewFKQBNwZXfUIu4A76ySsoL_njV7vVld3dXWejP7yZUTVSLfjUxUTlVyTHd6uNSzTOvxKr6Acf1ZFaHX88EST8r6lZVcmMd-izCNCC0JFmodPIi0pi3bktZN62LgzoMKM"
+            alt="Rodrigo Belarmino"
+            src="https://github.com/rb-belarmino.png"
           />
           <div>
             <h2 className="font-display-lg text-primary text-[20px] tracking-tight leading-tight">
               RODRIGO_BELARMINO
             </h2>
             <p className="font-code-sm text-code-sm text-on-surface-variant mt-1">
-              Full-Stack Architect
+              Full-Stack Dev
             </p>
             <span className="inline-block mt-2 font-code-sm text-code-sm text-primary-container bg-primary-container/10 px-2 py-1 rounded">
               v2.4.0

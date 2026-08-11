@@ -1,36 +1,86 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Rodrigo Belarmino - Cybernetic Portfolio
 
-## Getting Started
+> _“Architecting modern, scalable, and secure systems.”_
 
-First, run the development server:
+[![Next.js](https://img.shields.io/badge/Next.js-15.0-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-19.0-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![Resend](https://img.shields.io/badge/Resend-Email_API-black?style=for-the-badge)](https://resend.com/)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Bem-vindo ao código-fonte do meu portfólio pessoal. Este projeto é uma vitrine técnica projetada com uma estética **Cyber/Sci-fi** (Modo Escuro, detalhes em Neon Cyan e tipografia monoespaçada).
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Ele não é apenas uma página estática, mas uma aplicação web moderna construída para altíssima performance, acessibilidade e escalabilidade.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## ✨ Principais Features
 
-## Learn More
+- 🌐 **Internacionalização (i18n):** Suporte nativo e instantâneo para Português (PT) e Inglês (EN) usando `next-intl`, com rotas dinâmicas perfeitamente estáticas.
+- 🎨 **Design Neumorphism & Glassmorphism:** Interface escurecida focada em profundidade, desfoque (backdrop-blur) e transições suaves com `framer-motion`.
+- 📧 **Backend Serverless (E-mail):** Formulário de contato ligado diretamente a uma **Next.js API Route** que se comunica com o SDK do [Resend](https://resend.com), disparando e-mails estilizados com template HTML que segue o mesmo visual sci-fi do site.
+- ⚡ **Otimização Extrema:**
+  - Fontes customizadas carregadas via `next/font` (`Sora`, `Inter`, `JetBrains Mono`).
+  - SVG dinâmico (`icon.svg`) atuando como favicon.
+  - Imagens 100% responsivas.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🛠️ Stack Tecnológica
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+O projeto foi construído sobre uma arquitetura limpa e com as melhores ferramentas do ecossistema front-end contemporâneo:
 
-## Deploy on Vercel
+- **Framework:** Next.js (App Router)
+- **Linguagem:** TypeScript
+- **Estilização:** Tailwind CSS + Vanilla CSS modular
+- **Animações:** Framer Motion
+- **Formulários:** React Hook Form + Zod (Validação de Schemas)
+- **i18n:** next-intl
+- **Infraestrutura/E-mail:** Resend SDK
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🚀 Como Rodar Localmente
+
+Siga os passos abaixo para testar o projeto no seu próprio ambiente:
+
+1. **Clone o repositório:**
+   ```bash
+   git clone https://github.com/rb-belarmino/seu-repo-aqui.git
+   cd seu-repo-aqui
+   ```
+
+2. **Instale as dependências:**
+   ```bash
+   npm install
+   ```
+
+3. **Configure as Variáveis de Ambiente:**
+   Crie um arquivo `.env.local` na raiz do projeto com as chaves do Resend para ativar o formulário de contato.
+   ```env
+   RESEND_API_KEY="re_sua_chave_de_api"
+   RESEND_TO_EMAIL="seu-email@dominio.com"
+   ```
+
+4. **Inicie o servidor de desenvolvimento:**
+   ```bash
+   npm run dev
+   ```
+
+5. **Acesse a aplicação:**
+   Abra [http://localhost:3000](http://localhost:3000) no seu navegador.
+
+---
+
+## 📂 Estrutura do Projeto
+
+- `/src/app` - Configuração de rotas (App Router), API Routes e provedores globais.
+- `/src/components/ui` - Componentes visuais atômicos (Botões, Cards, Inputs).
+- `/src/components/features` - Blocos funcionais grandes (Formulário de Contato, Grid de Projetos, Timeline de Experiências).
+- `/src/lib/data` - Repositórios de dados locais (Mocks de portfólio importados do GitHub/LinkedIn).
+- `/src/messages` - Dicionários de tradução JSON (PT/EN).
+
+---
+
+> Desenvolvido com muita lógica, código limpo e arquitetura moderna por **Rodrigo Belarmino**.  
+> _Visite as issues ou abra um pull request caso encontre alguma anomalia na matrix!_ 👾
