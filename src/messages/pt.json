@@ -1,0 +1,30 @@
+{
+  "Hero": {
+    "greeting": "Olá, eu sou",
+    "role": "Desenvolvedor de Software",
+    "description": "Transformando ideias complexas em interfaces de alta performance e experiências memoráveis."
+  },
+  "Navigation": {
+    "projects": "Projetos",
+    "experience": "Experiência",
+    "contact": "Contato",
+    "resume": "Ver Currículo"
+  },
+  "Projects": {
+    "title": "Meus Projetos",
+    "viewCode": "Código",
+    "viewLive": "Deploy"
+  },
+  "Experience": {
+    "title": "Trajetória Profissional"
+  },
+  "Contact": {
+    "title": "Vamos conversar?",
+    "name": "Nome",
+    "email": "E-mail",
+    "message": "Mensagem",
+    "send": "Enviar Mensagem",
+    "success": "Mensagem enviada com sucesso!",
+    "error": "Ocorreu um erro ao enviar a mensagem."
+  }
+}
