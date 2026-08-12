@@ -1,10 +1,33 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
+import { useState, useEffect } from 'react'
 
 export function HeroSection({ locale }: { locale: string }) {
   const t = useTranslations('Hero')
   const isEn = locale === 'en'
+
+  const fullText = 'RODRIGO BELARMINO'
+  const [displayText, setDisplayText] = useState('')
+  const [isTyping, setIsTyping] = useState(true)
+
+  useEffect(() => {
+    let currentText = ''
+    let currentIndex = 0
+
+    const interval = setInterval(() => {
+      if (currentIndex < fullText.length) {
+        currentText += fullText[currentIndex]
+        setDisplayText(currentText)
+        currentIndex++
+      } else {
+        setIsTyping(false)
+        clearInterval(interval)
+      }
+    }, 120)
+
+    return () => clearInterval(interval)
+  }, [])
 
   return (
     <>
@@ -19,10 +42,19 @@ export function HeroSection({ locale }: { locale: string }) {
             <span className="animate-pulse">console.log("Hello, World!");</span>
           </div>
 
-          <h1 className="font-display font-extrabold text-5xl md:text-7xl text-on-background tracking-tight">
+          <h1 className="font-display font-extrabold text-5xl md:text-7xl text-on-background tracking-tight ">
             {t('greeting')} <br />
-            <span className="text-transparent bg-clip-text bg-linear-to-r from-primary-container to-secondary-container">
-              RODRIGO
+            <br />
+            <span 
+              className="font-mono uppercase tracking-widest text-transparent bg-clip-text bg-cover bg-center inline-block min-h-[1.2em] filter drop-shadow-[0_0_12px_rgba(100,240,255,0.9)]"
+              style={{ backgroundImage: "linear-gradient(to right, rgba(150,250,255,0.85), rgba(0,200,255,0.85)), url('/cover.jpg')" }}
+            >
+              {displayText}
+            </span>
+            <span
+              className={`text-primary-container font-mono opacity-80 ${isTyping ? 'animate-none' : 'animate-pulse'}`}
+            >
+              _
             </span>
           </h1>
 
