@@ -67,12 +67,12 @@ export function ContactForm() {
         <div className="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-primary/50"></div>
 
         <h1 className="font-display font-bold text-3xl md:text-4xl text-primary mb-2">
-          {isEn ? 'INITIALIZE_CONTACT' : 'INICIALIZAR_CONTATO'}
+          {isEn ? 'Contact Me' : 'Entre em Contato'}
         </h1>
         <p className="font-sans text-base text-on-surface-variant mb-12">
           {isEn
-            ? 'Transmit data packet to establishing secure connection.'
-            : 'Transmita o pacote de dados para estabelecer conexão segura.'}
+            ? 'Send me a message and I will get back to you as soon as possible.'
+            : 'Me envie uma mensagem e retornarei o mais rápido possível.'}
         </p>
 
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
@@ -81,13 +81,13 @@ export function ContactForm() {
               className="block font-mono text-sm text-primary mb-1 transition-all group-focus-within:text-primary-fixed"
               htmlFor="name"
             >
-              {isEn ? 'NAME_ID' : 'ID_NOME'}
+              {isEn ? 'Name' : 'Nome'}
             </label>
             <input
               {...register('name')}
               className="w-full bg-black border border-[#1A1A1B] text-on-surface font-sans text-base rounded px-4 py-3 focus:border-primary focus:shadow-[0_0_15px_rgba(0,243,255,0.3)] transition-all outline-none"
               id="name"
-              placeholder={isEn ? 'Enter identifier' : 'Insira o identificador'}
+              placeholder={isEn ? 'Enter your name' : 'Insira seu nome'}
               type="text"
             />
             {errors.name && (
@@ -102,13 +102,13 @@ export function ContactForm() {
               className="block font-mono text-sm text-primary mb-1 transition-all group-focus-within:text-primary-fixed"
               htmlFor="email"
             >
-              {isEn ? 'COMM_LINK' : 'LINK_COMUNICAÇÃO'}
+              {isEn ? 'Email' : 'E-mail'}
             </label>
             <input
               {...register('email')}
               className="w-full bg-black border border-[#1A1A1B] text-on-surface font-sans text-base rounded px-4 py-3 focus:border-primary focus:shadow-[0_0_15px_rgba(0,243,255,0.3)] transition-all outline-none"
               id="email"
-              placeholder={isEn ? 'Enter coordinates' : 'Insira as coordenadas'}
+              placeholder={isEn ? 'Enter your email' : 'Insira seu e-mail'}
               type="email"
             />
             {errors.email && (
@@ -123,7 +123,7 @@ export function ContactForm() {
               className="block font-mono text-sm text-primary mb-1 transition-all group-focus-within:text-primary-fixed"
               htmlFor="message"
             >
-              {isEn ? 'PAYLOAD' : 'CARGA_ÚTIL'}
+              {isEn ? 'Message' : 'Mensagem'}
             </label>
             <textarea
               {...register('message')}
@@ -131,8 +131,8 @@ export function ContactForm() {
               id="message"
               placeholder={
                 isEn
-                  ? 'Enter data transmission'
-                  : 'Insira a transmissão de dados'
+                  ? 'Enter your message'
+                  : 'Insira sua mensagem'
               }
               rows={4}
             ></textarea>
@@ -151,11 +151,11 @@ export function ContactForm() {
             <span className="material-symbols-outlined">send</span>
             {status === 'submitting'
               ? isEn
-                ? 'TRANSMITTING...'
-                : 'TRANSMITINDO...'
+                ? 'SENDING...'
+                : 'ENVIANDO...'
               : isEn
-                ? 'TRANSMIT'
-                : 'TRANSMITIR'}
+                ? 'SEND MESSAGE'
+                : 'ENVIAR MENSAGEM'}
           </button>
 
           {status === 'success' && (
@@ -171,8 +171,8 @@ export function ContactForm() {
         <div className="mt-12 pt-6 border-t border-white/10 flex flex-col items-center gap-6">
           <p className="font-mono text-sm text-on-surface-variant">
             {isEn
-              ? 'OR CONNECT VIA EXTERNAL NODES'
-              : 'OU CONECTE VIA NÓS EXTERNOS'}
+              ? 'OR CONNECT VIA SOCIAL MEDIA'
+              : 'OU CONECTE VIA REDES SOCIAIS'}
           </p>
           <div className="flex gap-6">
             <a

@@ -134,7 +134,7 @@ export function Navigation({ locale }: { locale: string }) {
             <li>
               <a href="#contact" className={getDesktopClass('contact')}>
                 <span className="material-symbols-outlined">mail</span>
-                <span>{isEn ? 'SIGNAL' : 'CONTATO'}</span>
+                <span>{isEn ? 'CONTACT' : 'CONTATO'}</span>
               </a>
             </li>
           </ul>
