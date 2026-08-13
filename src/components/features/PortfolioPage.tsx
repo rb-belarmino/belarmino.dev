@@ -4,6 +4,7 @@ import { NextIntlClientProvider, useTranslations } from 'next-intl'
 import { Navigation } from './Navigation'
 import { HeroSection } from './HeroSection'
 import { ProjectGrid } from './ProjectGrid'
+import { ServicesSection } from './ServicesSection'
 import { ExperienceList } from './ExperienceList'
 import { ContactForm } from './ContactForm'
 
@@ -31,6 +32,8 @@ function PortfolioContent({ locale }: { locale: string }) {
     <div className="flex flex-col min-h-screen pt-16 pb-20 md:pb-0 md:pl-72 w-full">
       <div className="w-full max-w-360 mx-auto px-4 md:px-12 flex flex-col gap-24 relative z-10">
         <HeroSection locale={locale} />
+        
+        <ServicesSection />
 
         <div id="projects" className="scroll-mt-24">
           <ProjectGrid locale={locale} />

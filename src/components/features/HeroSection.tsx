@@ -64,19 +64,19 @@ export function HeroSection({ locale }: { locale: string }) {
 
           <div className="flex gap-4 pt-4">
             <a
-              href="#projects"
+              href="#services"
               className="bg-primary-container text-on-primary hover:bg-primary-fixed hover:shadow-[0_0_30px_rgba(0,243,255,0.4)] hover:-translate-y-0.5 px-6 py-3 rounded-lg font-mono text-xs font-bold tracking-widest transition-all flex items-center gap-2 group"
             >
-              <span>{isEn ? 'VIEW PROJECTS' : 'VER PROJETOS'}</span>
+              <span>{isEn ? 'MY SOLUTIONS' : 'MINHAS SOLUÇÕES'}</span>
               <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">
                 arrow_forward
               </span>
             </a>
             <a
               href="#contact"
-              className="bg-transparent text-primary-container border border-primary-container/50 hover:bg-primary-container/10 px-6 py-3 rounded-lg font-mono text-xs font-bold tracking-widest transition-all flex items-center justify-center"
+              className="bg-transparent text-primary-container border border-primary-container/50 hover:bg-primary-container/10 px-6 py-3 rounded-lg font-mono text-xs font-bold tracking-widest transition-all flex items-center justify-center whitespace-nowrap"
             >
-              {isEn ? 'SYS_CONFIG' : 'CONFIG_SIS'}
+              {isEn ? 'START A PROJECT' : 'FALAR SOBRE UM PROJETO'}
             </a>
           </div>
         </div>

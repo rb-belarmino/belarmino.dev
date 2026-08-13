@@ -2,13 +2,23 @@
   "Hero": {
     "greeting": "Olá, eu sou",
     "role": "Desenvolvedor de Software",
-    "description": "Transformando ideias complexas em interfaces de alta performance e experiências memoráveis."
+    "description": "Desenvolvo softwares e sistemas sob medida para escalar o seu negócio e automatizar processos, unindo performance, segurança e design de ponta."
   },
   "Navigation": {
+    "services": "Soluções",
     "projects": "Projetos",
     "experience": "Experiência",
     "contact": "Contato",
     "resume": "Ver Currículo"
+  },
+  "Services": {
+    "title": "Minhas Soluções",
+    "systems": "Sistemas Sob Medida",
+    "systemsDesc": "Automação de processos e criação de plataformas web exclusivas para a necessidade da sua empresa.",
+    "apis": "Integração de APIs",
+    "apisDesc": "Conecto seus sistemas (ERPs, CRMs, Pagamentos) para que eles conversem entre si sem falhas.",
+    "cloud": "Infraestrutura Cloud",
+    "cloudDesc": "Hospedagem e arquitetura escalável na nuvem para garantir estabilidade e disponibilidade."
   },
   "Projects": {
     "title": "Meus Projetos",

@@ -1,14 +1,24 @@
 {
   "Hero": {
-    "greeting": "Hi, i am",
+    "greeting": "Hi, I am",
     "role": "Software Developer",
-    "description": "Transforming complex ideas into high-performance interfaces and memorable experiences."
+    "description": "I build custom software and systems to scale your business and automate processes, combining performance, security, and cutting-edge design."
   },
   "Navigation": {
+    "services": "Solutions",
     "projects": "Projects",
     "experience": "Experience",
     "contact": "Contact",
     "resume": "View Resume"
+  },
+  "Services": {
+    "title": "My Solutions",
+    "systems": "Custom Systems",
+    "systemsDesc": "Process automation and creation of exclusive web platforms tailored to your company's needs.",
+    "apis": "API Integration",
+    "apisDesc": "I connect your systems (ERPs, CRMs, Payments) so they communicate seamlessly.",
+    "cloud": "Cloud Infrastructure",
+    "cloudDesc": "Hosting and scalable cloud architecture to ensure stability and high availability."
   },
   "Projects": {
     "title": "My Projects",
