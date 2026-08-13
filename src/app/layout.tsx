@@ -18,8 +18,17 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Portfólio de Desenvolvedor',
-  description: 'Portfólio de Rodrigo Belarmino'
+  metadataBase: new URL('https://belarmino.dev'),
+  title: 'Rodrigo Belarmino | belarmino_dev',
+  description: 'Portfólio de engenharia de software e desenvolvimento full-stack.',
+  openGraph: {
+    title: 'Rodrigo Belarmino | belarmino_dev',
+    description: 'Arquitetando sistemas modernos, escaláveis e seguros.',
+    url: 'https://belarmino.dev',
+    siteName: 'belarmino.dev',
+    locale: 'pt_BR',
+    type: 'website',
+  }
 }
 
 export default function RootLayout({
