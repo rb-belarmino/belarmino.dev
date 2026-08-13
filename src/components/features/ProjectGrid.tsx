@@ -40,7 +40,7 @@ export function ProjectGrid({ locale }: { locale: string }) {
               >
                 <div className="absolute inset-0 bg-primary/10 mix-blend-overlay z-10 group-hover:bg-transparent transition-all duration-500"></div>
                 <img
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
                   alt={project.title}
                   src={
                     project.imageUrl ||
