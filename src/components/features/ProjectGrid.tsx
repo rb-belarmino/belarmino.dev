@@ -36,11 +36,11 @@ export function ProjectGrid({ locale }: { locale: string }) {
               className={`bg-white/5 backdrop-blur-md border border-white/10 rounded-xl overflow-hidden flex flex-col group transition-all duration-300 hover:border-primary/50 hover:shadow-glow-sm ${isFeatured ? 'md:col-span-2 flex-col md:flex-row h-full' : ''}`}
             >
               <div
-                className={`relative overflow-hidden ${isFeatured ? 'h-64 md:h-auto md:w-1/2 w-full' : 'h-64 w-full'}`}
+                className={`relative overflow-hidden ${isFeatured ? 'aspect-video md:aspect-auto md:h-full md:w-1/2 w-full' : 'aspect-video w-full'}`}
               >
                 <div className="absolute inset-0 bg-primary/10 mix-blend-overlay z-10 group-hover:bg-transparent transition-all duration-500"></div>
                 <img
-                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   alt={project.title}
                   src={
                     project.imageUrl ||

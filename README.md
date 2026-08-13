@@ -76,6 +76,29 @@ Siga os passos abaixo para testar o projeto no seu próprio ambiente:
 
 ---
 
+## 🧪 Testes E2E (Playwright)
+
+Este projeto utiliza **Playwright** para testes End-to-End, garantindo que fluxos críticos (como navegação e internacionalização) funcionem perfeitamente em múltiplos navegadores e dispositivos. O desenvolvimento foi guiado por especificações (Spec-Driven Development) documentadas na pasta `specs/`.
+
+Para rodar a suíte de testes E2E localmente:
+
+1. **Instale os binários dos navegadores** (Apenas na primeira vez):
+   ```bash
+   npx playwright install
+   ```
+
+2. **Execute a suíte completa de testes:**
+   ```bash
+   npx playwright test
+   ```
+
+3. **Visualize o relatório (HTML Report):**
+   ```bash
+   npx playwright show-report
+   ```
+
+---
+
 ## 📂 Estrutura do Projeto
 
 - `/src/app` - Configuração de rotas (App Router), API Routes e provedores globais.
