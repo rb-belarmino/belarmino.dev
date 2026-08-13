@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react'
 import { useTranslations } from 'next-intl'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
 
 export function Navigation({ locale }: { locale: string }) {
   const t = useTranslations('Navigation')
@@ -61,7 +60,10 @@ export function Navigation({ locale }: { locale: string }) {
       <header className="bg-surface/70 dark:bg-surface/70 backdrop-blur-xl font-headline-sm text-headline-sm fixed top-0 w-full z-50 border-b border-white/10 shadow-glow-sm">
         <div className="flex justify-between items-center px-6 h-16 w-full">
           {/* Leading Icon */}
-          <button data-testid="nav-menu-toggle" className="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-all duration-300 active:scale-95 flex items-center justify-center w-10 h-10">
+          <button
+            data-testid="nav-menu-toggle"
+            className="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-all duration-300 active:scale-95 flex items-center justify-center w-10 h-10"
+          >
             <span
               className="material-symbols-outlined"
               style={{ fontVariationSettings: "'FILL' 0" }}
@@ -72,7 +74,7 @@ export function Navigation({ locale }: { locale: string }) {
 
           {/* Headline / Brand */}
           <div className="font-label-caps text-label-caps tracking-[0.2em] text-primary dark:text-primary-container drop-shadow-glow-text">
-            CMD_CENTER
+            BELARMINO_DEV
           </div>
 
           {/* Trailing Icon (Language Switcher) */}
@@ -115,25 +117,41 @@ export function Navigation({ locale }: { locale: string }) {
         <nav className="flex-1 overflow-y-auto py-4">
           <ul className="flex flex-col gap-2 px-2">
             <li>
-              <a href="#" data-testid="desktop-nav-home" className={getDesktopClass('home')}>
+              <a
+                href="#"
+                data-testid="desktop-nav-home"
+                className={getDesktopClass('home')}
+              >
                 <span className="material-symbols-outlined">home</span>
                 <span>{isEn ? 'ROOT' : 'INÍCIO'}</span>
               </a>
             </li>
             <li>
-              <a href="#projects" data-testid="desktop-nav-projects" className={getDesktopClass('projects')}>
+              <a
+                href="#projects"
+                data-testid="desktop-nav-projects"
+                className={getDesktopClass('projects')}
+              >
                 <span className="material-symbols-outlined">code</span>
                 <span>{isEn ? 'REPOS' : 'PROJETOS'}</span>
               </a>
             </li>
             <li>
-              <a href="#experience" data-testid="desktop-nav-experience" className={getDesktopClass('experience')}>
+              <a
+                href="#experience"
+                data-testid="desktop-nav-experience"
+                className={getDesktopClass('experience')}
+              >
                 <span className="material-symbols-outlined">timeline</span>
                 <span>{isEn ? 'LOGS' : 'EXPERIÊNCIA'}</span>
               </a>
             </li>
             <li>
-              <a href="#contact" data-testid="desktop-nav-contact" className={getDesktopClass('contact')}>
+              <a
+                href="#contact"
+                data-testid="desktop-nav-contact"
+                className={getDesktopClass('contact')}
+              >
                 <span className="material-symbols-outlined">mail</span>
                 <span>{isEn ? 'CONTACT' : 'CONTATO'}</span>
               </a>
@@ -144,19 +162,35 @@ export function Navigation({ locale }: { locale: string }) {
 
       {/* BottomNavBar (Mobile) */}
       <nav className="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 py-3 md:hidden z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-lg rounded-t-xl shadow-glow-surface border-t border-white/10 font-label-caps text-label-caps">
-        <a href="#" data-testid="mobile-nav-home" className={getMobileClass('home')}>
+        <a
+          href="#"
+          data-testid="mobile-nav-home"
+          className={getMobileClass('home')}
+        >
           <span className="material-symbols-outlined mb-1">dashboard</span>
           <span className="text-[10px]">{isEn ? 'HOME' : 'INÍCIO'}</span>
         </a>
-        <a href="#projects" data-testid="mobile-nav-projects" className={getMobileClass('projects')}>
+        <a
+          href="#projects"
+          data-testid="mobile-nav-projects"
+          className={getMobileClass('projects')}
+        >
           <span className="material-symbols-outlined mb-1">code_blocks</span>
           <span className="text-[10px]">{isEn ? 'PROJECTS' : 'PROJETOS'}</span>
         </a>
-        <a href="#experience" data-testid="mobile-nav-experience" className={getMobileClass('experience')}>
+        <a
+          href="#experience"
+          data-testid="mobile-nav-experience"
+          className={getMobileClass('experience')}
+        >
           <span className="material-symbols-outlined mb-1">account_tree</span>
           <span className="text-[10px]">XP</span>
         </a>
-        <a href="#contact" data-testid="mobile-nav-contact" className={getMobileClass('contact')}>
+        <a
+          href="#contact"
+          data-testid="mobile-nav-contact"
+          className={getMobileClass('contact')}
+        >
           <span className="material-symbols-outlined mb-1">send</span>
           <span className="text-[10px]">{isEn ? 'CONTACT' : 'CONTATO'}</span>
         </a>
