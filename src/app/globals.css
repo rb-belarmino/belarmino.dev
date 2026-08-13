@@ -15,6 +15,18 @@
   --color-secondary: #7000ff;
   --color-background: #051424;
   --color-on-background: #d4e4fa;
+  --color-primary-fixed: #00f3ff;
+  --color-surface-border: #1a1a1b;
+
+  --shadow-glow-sm: 0 0 10px rgba(0, 243, 255, 0.2);
+  --shadow-glow-md: 0 0 15px rgba(0, 243, 255, 0.3);
+  --shadow-glow-lg: 0 0 20px rgba(0, 243, 255, 0.4);
+  --shadow-glow-xl: 0 0 30px rgba(0, 243, 255, 0.4);
+  --shadow-glow-surface: 0 -10px 30px rgba(0, 0, 0, 0.5);
+
+  --drop-shadow-glow-text: 0 0 12px rgba(100, 240, 255, 0.9);
+  --drop-shadow-glow-sm: 0 0 10px rgba(0, 243, 255, 0.2);
+
   --font-display: var(--font-sora), sans-serif;
   --font-sans: var(--font-inter), sans-serif;
   --font-mono: var(--font-jetbrains-mono), monospace;

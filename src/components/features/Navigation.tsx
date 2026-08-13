@@ -50,7 +50,7 @@ export function Navigation({ locale }: { locale: string }) {
     const isActive = activeSection === section
     return `flex flex-col items-center justify-center transition-all duration-300 ease-out w-16 p-2 rounded-xl relative ${
       isActive
-        ? 'bg-primary-container/20 text-primary shadow-[0_0_20px_rgba(0,243,255,0.4)] -translate-y-1 scale-105'
+        ? 'bg-primary-container/20 text-primary shadow-glow-lg -translate-y-1 scale-105'
         : 'text-on-surface-variant hover:text-primary hover:bg-white/5'
     }`
   }
@@ -58,7 +58,7 @@ export function Navigation({ locale }: { locale: string }) {
   return (
     <>
       {/* TopAppBar */}
-      <header className="bg-surface/70 dark:bg-surface/70 backdrop-blur-xl font-headline-sm text-headline-sm fixed top-0 w-full z-50 border-b border-white/10 shadow-[0_0_20px_rgba(0,243,255,0.1)]">
+      <header className="bg-surface/70 dark:bg-surface/70 backdrop-blur-xl font-headline-sm text-headline-sm fixed top-0 w-full z-50 border-b border-white/10 shadow-glow-sm">
         <div className="flex justify-between items-center px-6 h-16 w-full">
           {/* Leading Icon */}
           <button className="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-all duration-300 active:scale-95 flex items-center justify-center w-10 h-10">
@@ -71,7 +71,7 @@ export function Navigation({ locale }: { locale: string }) {
           </button>
 
           {/* Headline / Brand */}
-          <div className="font-label-caps text-label-caps tracking-[0.2em] text-primary dark:text-primary-container drop-shadow-[0_0_8px_rgba(0,243,255,0.4)]">
+          <div className="font-label-caps text-label-caps tracking-[0.2em] text-primary dark:text-primary-container drop-shadow-glow-text">
             CMD_CENTER
           </div>
 
@@ -93,7 +93,7 @@ export function Navigation({ locale }: { locale: string }) {
         {/* Profile Header */}
         <div className="p-6 border-b border-white/5 flex flex-col items-start gap-4">
           <img
-            className="w-16 h-16 rounded-full border-2 border-primary/30 object-cover shadow-[0_0_15px_rgba(0,243,255,0.2)]"
+            className="w-16 h-16 rounded-full border-2 border-primary/30 object-cover shadow-glow-md"
             alt="Rodrigo Belarmino"
             src="https://github.com/rb-belarmino.png"
           />
@@ -142,7 +142,7 @@ export function Navigation({ locale }: { locale: string }) {
       </aside>
 
       {/* BottomNavBar (Mobile) */}
-      <nav className="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 py-3 md:hidden z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-lg rounded-t-xl shadow-[0_-10px_30px_rgba(0,0,0,0.5)] border-t border-white/10 font-label-caps text-label-caps">
+      <nav className="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 py-3 md:hidden z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-lg rounded-t-xl shadow-glow-surface border-t border-white/10 font-label-caps text-label-caps">
         <a href="#" className={getMobileClass('home')}>
           <span className="material-symbols-outlined mb-1">dashboard</span>
           <span className="text-[10px]">{isEn ? 'HOME' : 'INÍCIO'}</span>

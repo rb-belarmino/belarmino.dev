@@ -85,7 +85,7 @@ export function ContactForm() {
             </label>
             <input
               {...register('name')}
-              className="w-full bg-black border border-[#1A1A1B] text-on-surface font-sans text-base rounded px-4 py-3 focus:border-primary focus:shadow-[0_0_15px_rgba(0,243,255,0.3)] transition-all outline-none"
+              className="w-full bg-black border border-surface-border text-on-surface font-sans text-base rounded px-4 py-3 focus:border-primary focus:shadow-glow-md transition-all outline-none"
               id="name"
               placeholder={isEn ? 'Enter your name' : 'Insira seu nome'}
               type="text"
@@ -106,7 +106,7 @@ export function ContactForm() {
             </label>
             <input
               {...register('email')}
-              className="w-full bg-black border border-[#1A1A1B] text-on-surface font-sans text-base rounded px-4 py-3 focus:border-primary focus:shadow-[0_0_15px_rgba(0,243,255,0.3)] transition-all outline-none"
+              className="w-full bg-black border border-surface-border text-on-surface font-sans text-base rounded px-4 py-3 focus:border-primary focus:shadow-glow-md transition-all outline-none"
               id="email"
               placeholder={isEn ? 'Enter your email' : 'Insira seu e-mail'}
               type="email"
@@ -127,13 +127,9 @@ export function ContactForm() {
             </label>
             <textarea
               {...register('message')}
-              className="w-full bg-black border border-[#1A1A1B] text-on-surface font-sans text-base rounded px-4 py-3 focus:border-primary focus:shadow-[0_0_15px_rgba(0,243,255,0.3)] transition-all outline-none resize-none"
+              className="w-full bg-black border border-surface-border text-on-surface font-sans text-base rounded px-4 py-3 focus:border-primary focus:shadow-glow-md transition-all outline-none resize-none"
               id="message"
-              placeholder={
-                isEn
-                  ? 'Enter your message'
-                  : 'Insira sua mensagem'
-              }
+              placeholder={isEn ? 'Enter your message' : 'Insira sua mensagem'}
               rows={4}
             ></textarea>
             {errors.message && (
@@ -146,7 +142,7 @@ export function ContactForm() {
           <button
             type="submit"
             disabled={status === 'submitting'}
-            className="w-full bg-primary text-black font-mono text-xs font-bold tracking-widest py-4 px-6 rounded hover:shadow-[0_0_20px_rgba(0,243,255,0.2)] hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2"
+            className="w-full bg-primary text-black font-mono text-xs font-bold tracking-widest py-4 px-6 rounded hover:shadow-glow-lg hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2"
           >
             <span className="material-symbols-outlined">send</span>
             {status === 'submitting'
@@ -179,7 +175,7 @@ export function ContactForm() {
               href="https://github.com/rb-belarmino"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-12 h-12 rounded-full border border-primary/30 flex items-center justify-center text-primary hover:bg-primary/10 hover:border-primary hover:shadow-[0_0_15px_rgba(0,243,255,0.3)] transition-all group"
+              className="w-12 h-12 rounded-full border border-primary/30 flex items-center justify-center text-primary hover:bg-primary/10 hover:border-primary hover:shadow-glow-md transition-all group"
             >
               <span className="material-symbols-outlined group-hover:scale-110 transition-transform">
                 code
@@ -189,7 +185,7 @@ export function ContactForm() {
               href="https://www.linkedin.com/in/rodrigo-belarmino/"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-12 h-12 rounded-full border border-primary/30 flex items-center justify-center text-primary hover:bg-primary/10 hover:border-primary hover:shadow-[0_0_15px_rgba(0,243,255,0.3)] transition-all group"
+              className="w-12 h-12 rounded-full border border-primary/30 flex items-center justify-center text-primary hover:bg-primary/10 hover:border-primary hover:shadow-glow-md transition-all group"
             >
               <span className="material-symbols-outlined group-hover:scale-110 transition-transform">
                 work

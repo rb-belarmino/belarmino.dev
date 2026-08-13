@@ -24,7 +24,7 @@ export function ExperienceList({ locale }: { locale: string }) {
       {/* Experience Timeline */}
       <section className="mb-10 relative">
         {/* Vertical Line */}
-        <div className="absolute left-3.75 md:left-1/2 top-0 bottom-0 w-0.5 bg-white/10 -translate-x-1/2 shadow-[0_0_15px_rgba(0,243,255,0.5)]">
+        <div className="absolute left-3.75 md:left-1/2 top-0 bottom-0 w-0.5 bg-white/10 -translate-x-1/2 shadow-glow-md">
           <div className="h-1/3 w-full bg-primary animate-pulse"></div>
         </div>
 
@@ -75,7 +75,7 @@ export function ExperienceList({ locale }: { locale: string }) {
 
                 {/* Dot */}
                 <div
-                  className={`absolute left-3.75 md:left-1/2 -translate-x-1/2 w-4 h-4 bg-surface border-2 rounded-full z-10 transition-colors ${isEven ? 'border-primary shadow-[0_0_10px_rgba(0,243,255,0.8)] group-hover:bg-primary' : 'border-primary/50 group-hover:border-primary'} ${!isEven && 'order-1 md:order-2'}`}
+                  className={`absolute left-3.75 md:left-1/2 -translate-x-1/2 w-4 h-4 bg-surface border-2 rounded-full z-10 transition-colors ${isEven ? 'border-primary shadow-glow-sm group-hover:bg-primary' : 'border-primary/50 group-hover:border-primary'} ${!isEven && 'order-1 md:order-2'}`}
                 ></div>
 
                 {/* Desktop Right Side */}

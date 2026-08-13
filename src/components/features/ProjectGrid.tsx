@@ -11,7 +11,7 @@ export function ProjectGrid({ locale }: { locale: string }) {
   return (
     <div className="w-full flex flex-col gap-16">
       <section className="flex flex-col gap-4">
-        <h1 className="font-display font-extrabold text-5xl md:text-7xl text-primary drop-shadow-[0_0_10px_rgba(0,243,255,0.2)] tracking-tight">
+        <h1 className="font-display font-extrabold text-5xl md:text-7xl text-primary drop-shadow-glow-sm tracking-tight">
           {t('title')}
         </h1>
         <p className="font-sans text-lg text-on-surface-variant max-w-2xl">
@@ -33,7 +33,7 @@ export function ProjectGrid({ locale }: { locale: string }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`bg-white/5 backdrop-blur-md border border-white/10 rounded-xl overflow-hidden flex flex-col group transition-all duration-300 hover:border-primary/50 hover:shadow-[0_0_20px_rgba(0,243,255,0.1)] ${isFeatured ? 'md:col-span-2 flex-col md:flex-row h-full' : ''}`}
+              className={`bg-white/5 backdrop-blur-md border border-white/10 rounded-xl overflow-hidden flex flex-col group transition-all duration-300 hover:border-primary/50 hover:shadow-glow-sm ${isFeatured ? 'md:col-span-2 flex-col md:flex-row h-full' : ''}`}
             >
               <div
                 className={`relative overflow-hidden ${isFeatured ? 'h-64 md:h-auto md:w-1/2 w-full' : 'h-64 w-full'}`}

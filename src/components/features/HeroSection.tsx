@@ -45,9 +45,12 @@ export function HeroSection({ locale }: { locale: string }) {
           <h1 className="font-display font-extrabold text-5xl md:text-7xl text-on-background tracking-tight ">
             {t('greeting')} <br />
             <br />
-            <span 
-              className="font-mono uppercase tracking-widest text-transparent bg-clip-text bg-cover bg-center inline-block min-h-[1.2em] filter drop-shadow-[0_0_12px_rgba(100,240,255,0.9)]"
-              style={{ backgroundImage: "linear-gradient(to right, rgba(150,250,255,0.85), rgba(0,200,255,0.85)), url('/cover.jpg')" }}
+            <span
+              className="font-mono uppercase tracking-widest text-transparent bg-clip-text bg-cover bg-center inline-block min-h-[1.2em] filter drop-shadow-glow-text"
+              style={{
+                backgroundImage:
+                  "linear-gradient(to right, rgba(150,250,255,0.85), rgba(0,200,255,0.85)), url('/cover.jpg')"
+              }}
             >
               {displayText}
             </span>
@@ -65,7 +68,7 @@ export function HeroSection({ locale }: { locale: string }) {
           <div className="flex gap-4 pt-4">
             <a
               href="#services"
-              className="bg-primary-container text-on-primary hover:bg-primary-fixed hover:shadow-[0_0_30px_rgba(0,243,255,0.4)] hover:-translate-y-0.5 px-6 py-3 rounded-lg font-mono text-xs font-bold tracking-widest transition-all flex items-center gap-2 group"
+              className="bg-primary text-black hover:bg-primary-fixed hover:shadow-glow-xl hover:-translate-y-0.5 px-6 py-3 rounded-lg font-mono text-xs font-bold tracking-widest transition-all flex items-center gap-2 group"
             >
               <span>{isEn ? 'MY SOLUTIONS' : 'MINHAS SOLUÇÕES'}</span>
               <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">
@@ -74,7 +77,7 @@ export function HeroSection({ locale }: { locale: string }) {
             </a>
             <a
               href="#contact"
-              className="bg-transparent text-primary-container border border-primary-container/50 hover:bg-primary-container/10 px-6 py-3 rounded-lg font-mono text-xs font-bold tracking-widest transition-all flex items-center justify-center whitespace-nowrap"
+              className="bg-transparent text-primary border border-primary/50 hover:bg-primary/10 px-6 py-3 rounded-lg font-mono text-xs font-bold tracking-widest transition-all flex items-center justify-center whitespace-nowrap"
             >
               {isEn ? 'START A PROJECT' : 'FALAR SOBRE UM PROJETO'}
             </a>
@@ -108,7 +111,7 @@ export function HeroSection({ locale }: { locale: string }) {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {/* Tech Item */}
           <div className="bg-white/5 backdrop-blur-md border border-white/10 p-6 rounded-xl flex flex-col items-center justify-center gap-4 hover:border-primary/50 transition-colors group">
-            <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:shadow-[0_0_20px_rgba(0,243,255,0.2)] transition-all">
+            <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:shadow-glow-lg transition-all">
               <span className="material-symbols-outlined text-primary text-[32px]">
                 data_object
               </span>
@@ -119,7 +122,7 @@ export function HeroSection({ locale }: { locale: string }) {
           </div>
           {/* Tech Item */}
           <div className="bg-white/5 backdrop-blur-md border border-white/10 p-6 rounded-xl flex flex-col items-center justify-center gap-4 hover:border-primary/50 transition-colors group">
-            <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:shadow-[0_0_20px_rgba(0,243,255,0.2)] transition-all">
+            <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:shadow-glow-lg transition-all">
               <span className="material-symbols-outlined text-primary text-[32px]">
                 code_blocks
               </span>
@@ -130,7 +133,7 @@ export function HeroSection({ locale }: { locale: string }) {
           </div>
           {/* Tech Item */}
           <div className="bg-white/5 backdrop-blur-md border border-white/10 p-6 rounded-xl flex flex-col items-center justify-center gap-4 hover:border-primary/50 transition-colors group">
-            <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:shadow-[0_0_20px_rgba(0,243,255,0.2)] transition-all">
+            <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:shadow-glow-lg transition-all">
               <span className="material-symbols-outlined text-primary text-[32px]">
                 cloud
               </span>
@@ -141,7 +144,7 @@ export function HeroSection({ locale }: { locale: string }) {
           </div>
           {/* Tech Item */}
           <div className="bg-white/5 backdrop-blur-md border border-white/10 p-6 rounded-xl flex flex-col items-center justify-center gap-4 hover:border-primary/50 transition-colors group">
-            <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:shadow-[0_0_20px_rgba(0,243,255,0.2)] transition-all">
+            <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:shadow-glow-lg transition-all">
               <span className="material-symbols-outlined text-primary text-[32px]">
                 dns
               </span>
