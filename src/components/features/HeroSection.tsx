@@ -68,6 +68,7 @@ export function HeroSection({ locale }: { locale: string }) {
           <div className="flex gap-4 pt-4">
             <a
               href="#services"
+              data-testid="hero-btn-solutions"
               className="bg-primary text-black hover:bg-primary-fixed hover:shadow-glow-xl hover:-translate-y-0.5 px-6 py-3 rounded-lg font-mono text-xs font-bold tracking-widest transition-all flex items-center gap-2 group"
             >
               <span>{isEn ? 'MY SOLUTIONS' : 'MINHAS SOLUÇÕES'}</span>
@@ -77,6 +78,7 @@ export function HeroSection({ locale }: { locale: string }) {
             </a>
             <a
               href="#contact"
+              data-testid="hero-btn-contact"
               className="bg-transparent text-primary border border-primary/50 hover:bg-primary/10 px-6 py-3 rounded-lg font-mono text-xs font-bold tracking-widest transition-all flex items-center justify-center whitespace-nowrap"
             >
               {isEn ? 'START A PROJECT' : 'FALAR SOBRE UM PROJETO'}
