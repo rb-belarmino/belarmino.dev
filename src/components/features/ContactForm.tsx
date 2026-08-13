@@ -164,6 +164,19 @@ export function ContactForm() {
           )}
         </form>
 
+        {/* OPÇÃO 2: Botão do WhatsApp na Seção de Contato */}
+        <div className="mt-8">
+          <a
+            href={process.env.NEXT_PUBLIC_WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full bg-[#25D366]/10 text-[#25D366] border border-[#25D366]/50 font-mono text-xs font-bold tracking-widest py-4 px-6 rounded hover:bg-[#25D366] hover:text-black hover:shadow-[0_0_15px_rgba(37,211,102,0.5)] hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2"
+          >
+            <span className="material-symbols-outlined">forum</span>
+            {isEn ? 'OR CHAT ON WHATSAPP' : 'OU CHAME NO WHATSAPP'}
+          </a>
+        </div>
+
         <div className="mt-12 pt-6 border-t border-white/10 flex flex-col items-center gap-6">
           <p className="font-mono text-sm text-on-surface-variant">
             {isEn
