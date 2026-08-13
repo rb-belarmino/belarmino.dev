@@ -96,7 +96,7 @@ export function ProjectGrid({ locale }: { locale: string }) {
                       <span className="material-symbols-outlined text-[18px]">
                         open_in_new
                       </span>
-                      {isEn ? 'DEPLOYED_INSTANCE' : 'INSTÂNCIA_DEPLOY'}
+                      {isEn ? 'VIEW_PROJECT' : 'VER_PROJETO'}
                     </a>
                   )}
                 </div>

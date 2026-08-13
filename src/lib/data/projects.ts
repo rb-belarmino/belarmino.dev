@@ -21,7 +21,7 @@ export const projects: Project[] = [
       en: 'Interactive application and platform focused on local community and engagement.'
     },
     technologies: ['Frontend', 'HTML', 'JS/TS'],
-    imageUrl: '',
+    imageUrl: '/vizin.png',
     repoUrl: 'https://github.com/rb-belarmino/vizin',
     date: '2023'
   },
@@ -45,8 +45,9 @@ export const projects: Project[] = [
       en: 'Commercial web platform for a bar and restaurant, optimized and hosted via Vercel.'
     },
     technologies: ['HTML/CSS', 'Frontend', 'Vercel'],
-    imageUrl: '',
+    imageUrl: '/nosso-quintal.png',
     repoUrl: 'https://github.com/rb-belarmino/nosso_quintal-bar',
+    liveUrl: 'https://nossoquintal.vercel.app/',
     date: '2022'
   },
   {
