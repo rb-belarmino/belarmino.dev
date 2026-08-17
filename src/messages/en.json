@@ -18,7 +18,8 @@
     "apis": "API Integration",
     "apisDesc": "I connect your systems (ERPs, CRMs, Payments) so they communicate seamlessly.",
     "cloud": "Cloud Infrastructure",
-    "cloudDesc": "Hosting and scalable cloud architecture to ensure stability and high availability."
+    "cloudDesc": "Hosting and scalable cloud architecture to ensure stability and high availability.",
+    "ctaContact": "Request Quote →"
   },
   "Projects": {
     "title": "My Projects",

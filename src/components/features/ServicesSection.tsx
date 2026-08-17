@@ -29,9 +29,27 @@ export function ServicesSection() {
               </span>
             </div>
             <h3 className="font-display text-xl font-bold text-on-surface mt-2">{t('systems')}</h3>
-            <p className="font-sans text-on-surface-variant leading-relaxed">
+            <p className="font-sans text-on-surface-variant leading-relaxed mb-2">
               {t('systemsDesc')}
             </p>
+            <div className="flex flex-wrap gap-1.5 mb-2">
+              <span className="text-[11px] font-mono bg-white/5 border border-white/10 text-on-surface-variant px-2 py-0.5 rounded-md">
+                ⚡ E-commerce / Lojas
+              </span>
+              <span className="text-[11px] font-mono bg-white/5 border border-white/10 text-on-surface-variant px-2 py-0.5 rounded-md">
+                📅 Sistemas de Agendamento
+              </span>
+              <span className="text-[11px] font-mono bg-white/5 border border-white/10 text-on-surface-variant px-2 py-0.5 rounded-md">
+                💼 Portais & Dashboards
+              </span>
+            </div>
+            <a
+              href="#contact"
+              className="mt-auto font-mono text-xs text-primary flex items-center gap-1 group-hover:translate-x-1 transition-transform"
+            >
+              <span>{t('ctaContact')}</span>
+              <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
+            </a>
           </div>
 
           {/* Service 2 */}
@@ -42,9 +60,27 @@ export function ServicesSection() {
               </span>
             </div>
             <h3 className="font-display text-xl font-bold text-on-surface mt-2">{t('apis')}</h3>
-            <p className="font-sans text-on-surface-variant leading-relaxed">
+            <p className="font-sans text-on-surface-variant leading-relaxed mb-2">
               {t('apisDesc')}
             </p>
+            <div className="flex flex-wrap gap-1.5 mb-2">
+              <span className="text-[11px] font-mono bg-white/5 border border-white/10 text-on-surface-variant px-2 py-0.5 rounded-md">
+                💳 Gateway de Pagamento (Pix/Stripe)
+              </span>
+              <span className="text-[11px] font-mono bg-white/5 border border-white/10 text-on-surface-variant px-2 py-0.5 rounded-md">
+                🔗 ERP & CRM Sync
+              </span>
+              <span className="text-[11px] font-mono bg-white/5 border border-white/10 text-on-surface-variant px-2 py-0.5 rounded-md">
+                🤖 Automações & Webhooks
+              </span>
+            </div>
+            <a
+              href="#contact"
+              className="mt-auto font-mono text-xs text-primary flex items-center gap-1 group-hover:translate-x-1 transition-transform"
+            >
+              <span>{t('ctaContact')}</span>
+              <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
+            </a>
           </div>
 
           {/* Service 3 */}
@@ -55,9 +91,27 @@ export function ServicesSection() {
               </span>
             </div>
             <h3 className="font-display text-xl font-bold text-on-surface mt-2">{t('cloud')}</h3>
-            <p className="font-sans text-on-surface-variant leading-relaxed">
+            <p className="font-sans text-on-surface-variant leading-relaxed mb-2">
               {t('cloudDesc')}
             </p>
+            <div className="flex flex-wrap gap-1.5 mb-2">
+              <span className="text-[11px] font-mono bg-white/5 border border-white/10 text-on-surface-variant px-2 py-0.5 rounded-md">
+                🚀 Deploy Alta Disponibilidade
+              </span>
+              <span className="text-[11px] font-mono bg-white/5 border border-white/10 text-on-surface-variant px-2 py-0.5 rounded-md">
+                🛡️ Segurança & CDN
+              </span>
+              <span className="text-[11px] font-mono bg-white/5 border border-white/10 text-on-surface-variant px-2 py-0.5 rounded-md">
+                📊 Monitoramento Serverless
+              </span>
+            </div>
+            <a
+              href="#contact"
+              className="mt-auto font-mono text-xs text-primary flex items-center gap-1 group-hover:translate-x-1 transition-transform"
+            >
+              <span>{t('ctaContact')}</span>
+              <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
+            </a>
           </div>
         </div>
       </div>

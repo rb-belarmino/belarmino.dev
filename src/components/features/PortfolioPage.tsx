@@ -3,8 +3,9 @@
 import { NextIntlClientProvider } from 'next-intl'
 import { Navigation } from './Navigation'
 import { HeroSection } from './HeroSection'
-import { ProjectGrid } from './ProjectGrid'
 import { ServicesSection } from './ServicesSection'
+import { UseCasesSection } from './UseCasesSection'
+import { ProjectGrid } from './ProjectGrid'
 import { ExperienceList } from './ExperienceList'
 import { ContactForm } from './ContactForm'
 
@@ -35,6 +36,8 @@ function PortfolioContent({ locale }: { locale: string }) {
 
         <ServicesSection />
 
+        <UseCasesSection locale={locale} />
+
         <div id="projects" className="scroll-mt-24">
           <ProjectGrid locale={locale} />
         </div>
@@ -43,7 +46,7 @@ function PortfolioContent({ locale }: { locale: string }) {
           <ExperienceList locale={locale} />
         </div>
 
-        <div id="contact" className="scroll-mt-24">
+        <div id="contact" className="scroll-mt-12 md:scroll-mt-16">
           <ContactForm />
         </div>
 

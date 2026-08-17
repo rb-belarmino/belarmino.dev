@@ -18,7 +18,8 @@
     "apis": "Integração de APIs",
     "apisDesc": "Conecto seus sistemas (ERPs, CRMs, Pagamentos) para que eles conversem entre si sem falhas.",
     "cloud": "Infraestrutura Cloud",
-    "cloudDesc": "Hospedagem e arquitetura escalável na nuvem para garantir estabilidade e disponibilidade."
+    "cloudDesc": "Hospedagem e arquitetura escalável na nuvem para garantir estabilidade e disponibilidade.",
+    "ctaContact": "Solicitar Orçamento →"
   },
   "Projects": {
     "title": "Meus Projetos",

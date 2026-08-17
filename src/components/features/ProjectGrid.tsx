@@ -72,7 +72,7 @@ export function ProjectGrid({ locale }: { locale: string }) {
                   ))}
                 </div>
 
-                <div className="flex gap-4 mt-4">
+                <div className="flex flex-wrap gap-3 mt-4">
                   {project.repoUrl && (
                     <a
                       href={project.repoUrl}
@@ -99,6 +99,15 @@ export function ProjectGrid({ locale }: { locale: string }) {
                       {isEn ? 'VIEW_PROJECT' : 'VER_PROJETO'}
                     </a>
                   )}
+                  <a
+                    href="#contact"
+                    className="flex-1 flex items-center justify-center gap-2 bg-white/5 text-primary-container hover:bg-primary-container/10 py-3 rounded-lg font-mono text-xs transition-colors border border-primary-container/20 hover:border-primary-container/50"
+                  >
+                    <span className="material-symbols-outlined text-[18px]">
+                      chat
+                    </span>
+                    {isEn ? 'SIMILAR_PROJECT' : 'PROJETO_SIMILAR'}
+                  </a>
                 </div>
               </div>
             </motion.article>
