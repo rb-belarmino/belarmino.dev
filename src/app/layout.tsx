@@ -19,15 +19,17 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://belarmino.dev'),
-  title: 'Rodrigo Belarmino | belarmino_dev',
-  description: 'Portfólio de engenharia de software e desenvolvimento full-stack.',
+  title: 'Rodrigo Belarmino | Desenvolvedor de Software Full-Stack',
+  description:
+    'Desenvolvimento de sistemas web, e-commerce, plataformas de agendamento e automações sob medida.',
   openGraph: {
-    title: 'Rodrigo Belarmino | belarmino_dev',
-    description: 'Arquitetando sistemas modernos, escaláveis e seguros.',
+    title: 'Rodrigo Belarmino | Desenvolvedor de Software',
+    description:
+      'Sistemas web modernos, e-commerce, plataformas de agendamento e automações sob medida.',
     url: 'https://belarmino.dev',
     siteName: 'belarmino.dev',
     locale: 'pt_BR',
-    type: 'website',
+    type: 'website'
   }
 }
 
