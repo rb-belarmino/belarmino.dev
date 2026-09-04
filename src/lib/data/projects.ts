@@ -14,6 +14,19 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: 'garage-flow',
+    title: 'AAW GarageFlow',
+    description: {
+      pt: 'Sistema de gestão de ordens de serviço e rastreamento de manutenção recorrente para frotas de concessionárias automotivas.',
+      en: 'Automotive shop work order and recurring maintenance tracking system for US dealership fleets.'
+    },
+    technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Vercel'],
+    imageUrl: '',
+    repoUrl: 'https://github.com/rb-belarmino/AAW-GarageFlow',
+    liveUrl: 'https://aaw-garage-flow.vercel.app/',
+    date: '2026'
+  },
+  {
     id: 'vizin',
     title: 'Vizin',
     description: {
