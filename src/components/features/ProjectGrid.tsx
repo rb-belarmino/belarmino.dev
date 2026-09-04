@@ -56,7 +56,7 @@ export function ProjectGrid({ locale }: { locale: string }) {
                   <h2 className="font-display font-bold text-2xl text-primary group-hover:text-primary-fixed transition-colors">
                     {project.title}
                   </h2>
-                  <p className="font-sans text-base text-on-surface-variant line-clamp-2">
+                  <p className="font-sans text-base text-on-surface-variant">
                     {isEn ? project.description.en : project.description.pt}
                   </p>
                 </div>
