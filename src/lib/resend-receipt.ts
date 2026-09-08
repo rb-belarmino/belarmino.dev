@@ -11,6 +11,7 @@ interface ReceiptEmailPayload {
   providerName: string;
   providerDoc: string;
   providerPix?: string | null;
+  providerBank?: string | null;
   serviceDescription: string;
   amountCents: number;
   paymentMethod: string;
@@ -87,15 +88,15 @@ export async function sendReceiptEmail(data: ReceiptEmailPayload) {
             </p>
 
             ${
-              isBoleto && data.providerPix
+              data.providerPix
                 ? `
             <!-- Box Destaque PIX no Email -->
-            <div style="background-color: #ecfdf5; border: 2px solid #10b981; border-radius: 10px; padding: 20px; margin-bottom: 25px;">
+            <div style="background-color: #ecfdf5; border: 2px solid #10b981; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
               <h3 style="margin: 0 0 8px 0; font-size: 13px; font-weight: bold; text-transform: uppercase; color: #065f46;">
                 ✨ Opção de Pagamento Instantâneo via PIX
               </h3>
               <p style="margin: 0 0 12px 0; font-size: 13px; color: #047857;">
-                Para compensação e baixa imediata deste boleto, você pode realizar o pagamento via PIX:
+                Para compensação e baixa imediata, você pode realizar o pagamento via PIX:
               </p>
               <div style="background-color: #ffffff; border: 1px solid #6ee7b7; border-radius: 6px; padding: 10px 14px; font-family: monospace; font-size: 13px; font-weight: bold; color: #064e3b;">
                 Chave PIX: ${data.providerPix}
@@ -105,14 +106,15 @@ export async function sendReceiptEmail(data: ReceiptEmailPayload) {
             }
 
             ${
-              isBoleto && data.barcodeLine
+              data.providerBank
                 ? `
-            <div style="background-color: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 15px; margin-bottom: 25px;">
+            <!-- Box Dados Bancários no Email -->
+            <div style="background-color: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 15px; margin-bottom: 20px;">
               <span style="font-size: 11px; text-transform: uppercase; color: #64748b; font-weight: bold; display: block; margin-bottom: 5px;">
-                Linha Digitável do Boleto:
+                Dados para Transferência Bancária / TED / DOC:
               </span>
-              <span style="font-family: monospace; font-size: 12px; font-weight: bold; color: #0f172a; word-break: break-all;">
-                ${data.barcodeLine}
+              <span style="font-family: monospace; font-size: 12px; font-weight: bold; color: #0f172a;">
+                ${data.providerBank}
               </span>
             </div>`
                 : ""

@@ -17,6 +17,7 @@ export const serviceReceipts = pgTable("service_receipts", {
   providerNameSnapshot: varchar("provider_name_snapshot", { length: 255 }).notNull(),
   providerDocSnapshot: varchar("provider_doc_snapshot", { length: 50 }).notNull(),
   providerPixSnapshot: varchar("provider_pix_snapshot", { length: 100 }),
+  providerBankSnapshot: text("provider_bank_snapshot"), // Banco, Agência, Conta
   
   serviceDescription: text("service_description").notNull(),
   amountCents: integer("amount_cents").notNull(),

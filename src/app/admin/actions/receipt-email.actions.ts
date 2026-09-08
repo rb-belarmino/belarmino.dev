@@ -33,6 +33,7 @@ export async function sendReceiptEmailAction(receiptId: string, customNote?: str
       providerName: receipt.providerNameSnapshot,
       providerDoc: receipt.providerDocSnapshot,
       providerPix: receipt.providerPixSnapshot,
+      providerBank: receipt.providerBankSnapshot,
       serviceDescription: receipt.serviceDescription,
       amountCents: receipt.amountCents,
       paymentMethod: receipt.paymentMethod,

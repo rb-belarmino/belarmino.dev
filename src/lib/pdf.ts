@@ -1,5 +1,5 @@
 import jsPDF from "jspdf";
-import html2canvas from "html2canvas";
+import { toPng } from "html-to-image";
 
 export async function downloadReceiptPDF(elementId: string, filename: string) {
   const element = document.getElementById(elementId);
@@ -7,15 +7,21 @@ export async function downloadReceiptPDF(elementId: string, filename: string) {
     throw new Error(`Elemento #${elementId} não encontrado para geração de PDF.`);
   }
 
-  // Create high-res canvas
-  const canvas = await html2canvas(element, {
-    scale: 2, // 2x resolution for crisp text
-    useCORS: true,
-    logging: false,
+  // Generate high-res image at fixed 800px width (prevents viewport clipping)
+  const imgData = await toPng(element, {
+    pixelRatio: 2,
     backgroundColor: "#ffffff",
+    cacheBust: true,
+    skipFonts: true,
+    width: 800,
   });
 
-  const imgData = canvas.toDataURL("image/png");
+  const img = new Image();
+  img.src = imgData;
+  await new Promise((resolve, reject) => {
+    img.onload = resolve;
+    img.onerror = reject;
+  });
 
   // A4 dimensions in mm: 210 x 297
   const pdf = new jsPDF({
@@ -24,21 +30,27 @@ export async function downloadReceiptPDF(elementId: string, filename: string) {
     format: "a4",
   });
 
-  const imgWidth = 210;
+  const pageWidth = 210;
   const pageHeight = 297;
-  const imgHeight = (canvas.height * imgWidth) / canvas.width;
+  const margin = 10;
+  const printableWidth = pageWidth - margin * 2;
+  const printableHeight = (img.height * printableWidth) / img.width;
 
-  let heightLeft = imgHeight;
-  let position = 0;
+  if (printableHeight <= pageHeight - margin * 2) {
+    pdf.addImage(imgData, "PNG", margin, margin, printableWidth, printableHeight);
+  } else {
+    let heightLeft = printableHeight;
+    let position = margin;
 
-  pdf.addImage(imgData, "PNG", 0, position, imgWidth, imgHeight);
-  heightLeft -= pageHeight;
-
-  while (heightLeft >= 0) {
-    position = heightLeft - imgHeight;
-    pdf.addPage();
-    pdf.addImage(imgData, "PNG", 0, position, imgWidth, imgHeight);
+    pdf.addImage(imgData, "PNG", margin, position, printableWidth, printableHeight);
     heightLeft -= pageHeight;
+
+    while (heightLeft > 0) {
+      position = heightLeft - printableHeight + margin;
+      pdf.addPage();
+      pdf.addImage(imgData, "PNG", margin, position, printableWidth, printableHeight);
+      heightLeft -= pageHeight;
+    }
   }
 
   pdf.save(filename);

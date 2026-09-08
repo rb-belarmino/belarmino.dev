@@ -19,6 +19,10 @@ interface ProviderData {
   document: string;
   pixKey: string | null;
   cityState: string;
+  bankName?: string | null;
+  bankAgency?: string | null;
+  bankAccount?: string | null;
+  bankAccountType?: string | null;
 }
 
 interface ReceiptFormProps {
@@ -86,6 +90,11 @@ export function ReceiptForm({ clients, provider, preSelectedClientId }: ReceiptF
     setClientDocument(formatDocumentMask(e.target.value));
   }
 
+  const bankSummary =
+    provider?.bankName && provider?.bankAccount
+      ? `Banco: ${provider.bankName} | Agência: ${provider.bankAgency || "—"} | Conta: ${provider.bankAccount} (${provider.bankAccountType || "Conta Corrente"})`
+      : undefined;
+
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setError(null);
@@ -105,6 +114,7 @@ export function ReceiptForm({ clients, provider, preSelectedClientId }: ReceiptF
       providerName: provider?.fullName || "Rodrigo Belarmino",
       providerDoc: provider?.document || "000.000.000-00",
       providerPix: provider?.pixKey || "",
+      providerBank: bankSummary,
       serviceDescription,
       amount: Number(amount),
       paymentMethod: documentType === "boleto" ? "Boleto Bancário / PIX" : paymentMethod,
@@ -133,7 +143,7 @@ export function ReceiptForm({ clients, provider, preSelectedClientId }: ReceiptF
           </span>
           <div>
             <h2 className="text-base font-bold text-white">
-              {documentType === "boleto" ? "Emitir Boleto de Cobrança com PIX" : "Emitir Recibo de Quitação"}
+              {documentType === "boleto" ? "Emitir Fatura de Cobrança com PIX" : "Emitir Recibo de Quitação"}
             </h2>
             <p className="text-xs text-slate-400">
               Escolha o tipo de documento fiscal e preencha os dados do cliente.
@@ -147,7 +157,7 @@ export function ReceiptForm({ clients, provider, preSelectedClientId }: ReceiptF
             type="button"
             onClick={() => {
               setDocumentType("boleto");
-              setPaymentMethod("Boleto / PIX");
+              setPaymentMethod("PIX / Transferência");
             }}
             className={`py-2.5 px-3 rounded-lg text-xs font-bold transition flex items-center justify-center gap-2 cursor-pointer ${
               documentType === "boleto"
@@ -156,7 +166,7 @@ export function ReceiptForm({ clients, provider, preSelectedClientId }: ReceiptF
             }`}
           >
             <span className="material-symbols-outlined text-base">receipt</span>
-            <span>Boleto de Cobrança + PIX</span>
+            <span>Cobrança / Fatura + PIX</span>
           </button>
           <button
             type="button"
@@ -375,7 +385,7 @@ export function ReceiptForm({ clients, provider, preSelectedClientId }: ReceiptF
               ) : (
                 <>
                   <span className="material-symbols-outlined text-base">check</span>
-                  <span>{documentType === "boleto" ? "Gerar Boleto com PIX" : "Emitir e Salvar Recibo"}</span>
+                  <span>{documentType === "boleto" ? "Gerar Cobrança com PIX" : "Emitir e Salvar Recibo"}</span>
                 </>
               )}
             </button>
@@ -396,7 +406,7 @@ export function ReceiptForm({ clients, provider, preSelectedClientId }: ReceiptF
           <div>
             <span className="text-slate-500 block">Tipo:</span>
             <span className="text-cyan-400 font-bold">
-              {documentType === "boleto" ? "Boleto de Cobrança com PIX" : "Recibo de Quitação"}
+              {documentType === "boleto" ? "Fatura de Cobrança com PIX" : "Recibo de Quitação"}
             </span>
           </div>
 
@@ -432,7 +442,7 @@ export function ReceiptForm({ clients, provider, preSelectedClientId }: ReceiptF
           {provider?.pixKey && (
             <div className="p-3 bg-emerald-950/30 border border-emerald-800/40 rounded-xl space-y-1">
               <span className="text-emerald-400 text-[10px] font-bold uppercase block">
-                Chave PIX do Boleto:
+                Chave PIX:
               </span>
               <span className="text-white font-mono text-xs block select-all">
                 {provider.pixKey}
@@ -440,8 +450,19 @@ export function ReceiptForm({ clients, provider, preSelectedClientId }: ReceiptF
             </div>
           )}
 
+          {bankSummary && (
+            <div className="p-3 bg-[#161b22] border border-slate-800 rounded-xl space-y-1">
+              <span className="text-slate-400 text-[10px] font-bold uppercase block">
+                Dados Bancários:
+              </span>
+              <span className="text-slate-300 text-[11px] block leading-tight">
+                {bankSummary}
+              </span>
+            </div>
+          )}
+
           <div className="pt-3 border-t border-slate-800/80 text-slate-500 text-[11px]">
-            O documento será gerado com número oficial, linha digitável, QR Code e estará pronto para download em PDF ou disparo por e-mail.
+            O documento será gerado com número oficial, dados bancários completos, QR Code e estará pronto para download em PDF ou disparo por e-mail.
           </div>
         </div>
       </div>

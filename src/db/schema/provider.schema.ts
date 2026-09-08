@@ -8,6 +8,13 @@ export const providerSettings = pgTable("provider_settings", {
   phone: varchar("phone", { length: 50 }).default(""),
   email: varchar("email", { length: 255 }).default("contato@belarmino.dev"),
   cityState: varchar("city_state", { length: 100 }).notNull().default("São Paulo - SP"),
+  
+  // Dados Bancários para Depósito / Transferência / TED
+  bankName: varchar("bank_name", { length: 100 }).default(""),
+  bankAgency: varchar("bank_agency", { length: 20 }).default(""),
+  bankAccount: varchar("bank_account", { length: 30 }).default(""),
+  bankAccountType: varchar("bank_account_type", { length: 50 }).default("Conta Corrente"),
+  
   updatedAt: timestamp("updated_at").defaultNow().notNull(),
 });
 

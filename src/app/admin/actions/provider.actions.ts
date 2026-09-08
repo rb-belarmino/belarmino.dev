@@ -13,6 +13,10 @@ const ProviderSchema = z.object({
   phone: z.string().optional(),
   email: z.string().email("E-mail inválido").optional().or(z.literal("")),
   cityState: z.string().min(2, "Cidade e Estado são obrigatórios"),
+  bankName: z.string().optional(),
+  bankAgency: z.string().optional(),
+  bankAccount: z.string().optional(),
+  bankAccountType: z.string().optional(),
 });
 
 export async function getProviderSettingsAction() {
@@ -32,33 +36,43 @@ export async function updateProviderSettingsAction(data: z.infer<typeof Provider
     return { error: "Dados inválidos. Verifique os campos." };
   }
 
-  const { fullName, document, pixKey, phone, email, cityState } = validated.data;
+  const {
+    fullName,
+    document,
+    pixKey,
+    phone,
+    email,
+    cityState,
+    bankName,
+    bankAgency,
+    bankAccount,
+    bankAccountType,
+  } = validated.data;
 
   try {
     const list = await db.select().from(providerSettings).limit(1);
 
+    const values = {
+      fullName: fullName.trim(),
+      document: document.trim(),
+      pixKey: pixKey?.trim() || null,
+      phone: phone?.trim() || null,
+      email: email?.trim() || null,
+      cityState: cityState.trim(),
+      bankName: bankName?.trim() || null,
+      bankAgency: bankAgency?.trim() || null,
+      bankAccount: bankAccount?.trim() || null,
+      bankAccountType: bankAccountType?.trim() || "Conta Corrente",
+      updatedAt: new Date(),
+    };
+
     if (list.length > 0) {
       await db
         .update(providerSettings)
-        .set({
-          fullName: fullName.trim(),
-          document: document.trim(),
-          pixKey: pixKey?.trim() || null,
-          phone: phone?.trim() || null,
-          email: email?.trim() || null,
-          cityState: cityState.trim(),
-          updatedAt: new Date(),
-        })
+        .set(values)
         .where(eq(providerSettings.id, list[0].id));
     } else {
-      await db.insert(providerSettings).values({
-        fullName: fullName.trim(),
-        document: document.trim(),
-        pixKey: pixKey?.trim() || null,
-        phone: phone?.trim() || null,
-        email: email?.trim() || null,
-        cityState: cityState.trim(),
-      });
+      await db.insert(providerSettings).values(values);
     }
 
     revalidatePath("/admin/settings");
