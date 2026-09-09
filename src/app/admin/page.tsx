@@ -130,7 +130,14 @@ export default async function AdminDashboardPage() {
               {recentReceipts.map((receipt) => (
                 <div key={receipt.id} className="py-3.5 flex items-center justify-between">
                   <div>
-                    <div className="text-xs font-bold text-slate-200">{receipt.clientNameSnapshot}</div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-xs font-bold text-slate-200">{receipt.clientNameSnapshot}</span>
+                      {receipt.status === 'paid' && (
+                        <span className="px-1.5 py-0.2 rounded text-[9px] font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
+                          Pago
+                        </span>
+                      )}
+                    </div>
                     <div className="text-[11px] text-slate-500 font-mono mt-0.5">
                       {receipt.receiptNumber} • {receipt.issueDate}
                     </div>

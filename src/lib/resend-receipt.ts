@@ -1,44 +1,46 @@
-import { Resend } from "resend";
-import { formatBRL, numberToWordsBRL } from "./currency";
+import { Resend } from 'resend'
+import { formatBRL, numberToWordsBRL } from './currency'
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = new Resend(process.env.RESEND_API_KEY)
 
 interface ReceiptEmailPayload {
-  documentType?: string;
-  receiptNumber: string;
-  clientName: string;
-  clientEmail: string;
-  providerName: string;
-  providerDoc: string;
-  providerPix?: string | null;
-  providerBank?: string | null;
-  serviceDescription: string;
-  amountCents: number;
-  paymentMethod: string;
-  issueDate: string;
-  dueDate?: string | null;
-  barcodeLine?: string | null;
-  customNote?: string;
+  documentType?: string
+  receiptNumber: string
+  clientName: string
+  clientEmail: string
+  providerName: string
+  providerDoc: string
+  providerPix?: string | null
+  providerBank?: string | null
+  serviceDescription: string
+  amountCents: number
+  paymentMethod: string
+  issueDate: string
+  dueDate?: string | null
+  barcodeLine?: string | null
+  customNote?: string
 }
 
 export async function sendReceiptEmail(data: ReceiptEmailPayload) {
   if (!process.env.RESEND_API_KEY) {
-    throw new Error("Chave do Resend (RESEND_API_KEY) não configurada.");
+    throw new Error('Chave do Resend (RESEND_API_KEY) não configurada.')
   }
 
-  const isBoleto = data.documentType === "boleto";
-  const amountReal = data.amountCents / 100;
-  const amountFormatted = formatBRL(amountReal);
-  const amountInWords = numberToWordsBRL(amountReal);
+  const isBoleto = data.documentType === 'boleto'
+  const amountReal = data.amountCents / 100
+  const amountFormatted = formatBRL(amountReal)
+  const amountInWords = numberToWordsBRL(amountReal)
 
-  const [year, month, day] = data.issueDate.split("-");
-  const formattedDate = `${day}/${month}/${year}`;
+  const [year, month, day] = data.issueDate.split('-')
+  const formattedDate = `${day}/${month}/${year}`
 
   const formattedDueDate = data.dueDate
-    ? `${data.dueDate.split("-")[2]}/${data.dueDate.split("-")[1]}/${data.dueDate.split("-")[0]}`
-    : formattedDate;
+    ? `${data.dueDate.split('-')[2]}/${data.dueDate.split('-')[1]}/${data.dueDate.split('-')[0]}`
+    : formattedDate
 
-  const docTitle = isBoleto ? "Boleto de Cobrança de Serviços" : "Recibo de Prestação de Serviços";
+  const docTitle = isBoleto
+    ? 'Boleto de Cobrança de Serviços'
+    : 'Recibo de Prestação de Serviços'
 
   const htmlContent = `
     <!DOCTYPE html>
@@ -51,7 +53,7 @@ export async function sendReceiptEmail(data: ReceiptEmailPayload) {
       <table width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width: 600px; margin: 0 auto; background-color: #ffffff; border-radius: 12px; overflow: hidden; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);">
         <!-- Header -->
         <tr>
-          <td style="padding: 30px; background-color: #07090e; color: #ffffff; border-bottom: 3px solid ${isBoleto ? "#10b981" : "#06b6d4"};">
+          <td style="padding: 30px; background-color: #07090e; color: #ffffff; border-bottom: 3px solid ${isBoleto ? '#10b981' : '#06b6d4'};">
             <table width="100%" cellpadding="0" cellspacing="0" border="0">
               <tr>
                 <td>
@@ -102,7 +104,7 @@ export async function sendReceiptEmail(data: ReceiptEmailPayload) {
                 Chave PIX: ${data.providerPix}
               </div>
             </div>`
-                : ""
+                : ''
             }
 
             ${
@@ -117,11 +119,11 @@ export async function sendReceiptEmail(data: ReceiptEmailPayload) {
                 ${data.providerBank}
               </span>
             </div>`
-                : ""
+                : ''
             }
 
             <!-- Details Box -->
-            <div style="background-color: #f1f5f9; border-radius: 8px; padding: 20px; margin-bottom: 25px; border-left: 4px solid ${isBoleto ? "#10b981" : "#06b6d4"};">
+            <div style="background-color: #f1f5f9; border-radius: 8px; padding: 20px; margin-bottom: 25px; border-left: 4px solid ${isBoleto ? '#10b981' : '#06b6d4'};">
               <h3 style="margin: 0 0 10px 0; font-size: 12px; text-transform: uppercase; color: #475569; letter-spacing: 0.5px;">
                 Discriminação dos Serviços:
               </h3>
@@ -136,7 +138,7 @@ export async function sendReceiptEmail(data: ReceiptEmailPayload) {
             <div style="background-color: #fffbeb; border: 1px solid #fef3c7; border-radius: 8px; padding: 15px; margin-bottom: 25px; font-size: 13px; color: #92400e;">
               <strong>Mensagem do Emissor:</strong><br>${data.customNote}
             </div>`
-                : ""
+                : ''
             }
 
             <!-- Signature footer -->
@@ -163,12 +165,14 @@ export async function sendReceiptEmail(data: ReceiptEmailPayload) {
       </table>
     </body>
     </html>
-  `;
+  `
 
   return await resend.emails.send({
-    from: process.env.RESEND_FROM_EMAIL || "Rodrigo Belarmino <onboarding@resend.dev>",
+    from:
+      process.env.RESEND_FROM_EMAIL ||
+      'Rodrigo Belarmino <onboarding@resend.dev>',
     to: [data.clientEmail],
     subject: `${docTitle} - ${data.receiptNumber}`,
-    html: htmlContent,
-  });
+    html: htmlContent
+  })
 }

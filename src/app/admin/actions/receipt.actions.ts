@@ -114,3 +114,43 @@ export async function deleteReceiptAction(receiptId: string) {
     return { error: "Falha ao excluir documento." };
   }
 }
+
+export async function markAsPaidAction(receiptId: string) {
+  try {
+    await db
+      .update(serviceReceipts)
+      .set({
+        status: "paid",
+        paidAt: new Date(),
+      })
+      .where(eq(serviceReceipts.id, receiptId));
+
+    revalidatePath(`/admin/receipts/${receiptId}`);
+    revalidatePath("/admin/receipts");
+    revalidatePath("/admin");
+    return { success: true };
+  } catch (err) {
+    console.error("Erro ao dar baixa no documento:", err);
+    return { error: "Falha ao marcar como pago." };
+  }
+}
+
+export async function markAsPendingAction(receiptId: string) {
+  try {
+    await db
+      .update(serviceReceipts)
+      .set({
+        status: "issued",
+        paidAt: null,
+      })
+      .where(eq(serviceReceipts.id, receiptId));
+
+    revalidatePath(`/admin/receipts/${receiptId}`);
+    revalidatePath("/admin/receipts");
+    revalidatePath("/admin");
+    return { success: true };
+  } catch (err) {
+    console.error("Erro ao reverter status do documento:", err);
+    return { error: "Falha ao reverter status." };
+  }
+}

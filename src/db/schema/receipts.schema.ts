@@ -27,8 +27,9 @@ export const serviceReceipts = pgTable("service_receipts", {
   barcodeLine: varchar("barcode_line", { length: 100 }), // Linha digitável
   instructions: text("instructions"), // Instruções adicionais de cobrança
   
-  status: varchar("status", { length: 50 }).notNull().default("issued"), // draft, issued, sent
+  status: varchar("status", { length: 50 }).notNull().default("issued"), // draft, issued, sent, paid
   sentAt: timestamp("sent_at"),
+  paidAt: timestamp("paid_at"),
   createdAt: timestamp("created_at").defaultNow().notNull(),
 });
 

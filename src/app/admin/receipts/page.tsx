@@ -97,15 +97,20 @@ export default async function AdminReceiptsPage() {
                       )}
                     </td>
                     <td className="px-5 py-4">
-                      {receipt.status === "sent" ? (
-                        <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                      {receipt.status === "paid" ? (
+                        <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">
+                          <span className="material-symbols-outlined text-xs">verified</span>
+                          Pago
+                        </span>
+                      ) : receipt.status === "sent" ? (
+                        <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-medium bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
                           <span className="material-symbols-outlined text-xs">mark_email_read</span>
                           Enviado
                         </span>
                       ) : (
-                        <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-medium bg-slate-800 text-slate-300 border border-slate-700">
-                          <span className="material-symbols-outlined text-xs">description</span>
-                          Emitido
+                        <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-medium bg-amber-500/10 text-amber-400 border border-amber-500/20">
+                          <span className="material-symbols-outlined text-xs">schedule</span>
+                          Pendente
                         </span>
                       )}
                     </td>
