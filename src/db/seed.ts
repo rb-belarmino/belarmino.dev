@@ -20,8 +20,15 @@ async function seed() {
 
   console.log('🌱 Iniciando seed do banco de dados...')
 
-  const initialUsername = process.env.INITIAL_ADMIN_USERNAME || 'admin'
-  const initialPassword = process.env.INITIAL_ADMIN_PASSWORD || 'admin123'
+  const initialUsername = process.env.INITIAL_ADMIN_USERNAME
+  const initialPassword = process.env.INITIAL_ADMIN_PASSWORD
+
+  if (!initialUsername || !initialPassword) {
+    console.error(
+      '❌ INITIAL_ADMIN_USERNAME e INITIAL_ADMIN_PASSWORD devem estar configurados no .env.local'
+    )
+    process.exit(1)
+  }
 
   // 1. Seed Admin User
   const existingUsers = await db
