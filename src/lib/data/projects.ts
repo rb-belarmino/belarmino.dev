@@ -14,6 +14,19 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: 'catalog-canal-whatsapp',
+    title: 'Catálogo Web',
+    description: {
+      pt: 'Uma plataforma moderna e performática de catálogo digital projetada para integrar perfeitamente a jornada de compra via WhatsApp.',
+      en: 'A modern and performant digital catalog platform designed to perfectly integrate the shopping journey via WhatsApp.'
+    },
+    technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'PostgreSQL', 'Prisma'],
+    imageUrl: '',
+    repoUrl: 'https://github.com/rb-belarmino/catalog-canal-whatsapp',
+    liveUrl: 'https://catalog-canal-whatsapp.vercel.app/',
+    date: '2026'
+  },
+  {
     id: 'garage-flow',
     title: 'AAW GarageFlow',
     description: {
