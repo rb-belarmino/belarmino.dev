@@ -27,6 +27,18 @@ export const projects: Project[] = [
     date: '2026'
   },
   {
+    id: 'bot-slack',
+    title: 'Slack Bot - Autoatendimento',
+    description: {
+      pt: 'Bot de autoatendimento integrado ao Slack desenvolvido para otimizar o suporte interno, automatizar fluxos operacionais e agilizar a resolução de chamados no time em que eu trabalhava.',
+      en: 'Self-service Slack bot developed to streamline internal support, automate operational workflows, and accelerate ticket resolution for the team I worked with.'
+    },
+    technologies: ['Node.js', 'Slack API', 'Automation', 'Webhooks'],
+    imageUrl: '',
+    repoUrl: 'https://github.com/rb-belarmino/bot-slack',
+    date: '2023'
+  },
+  {
     id: 'garage-flow',
     title: 'AAW GarageFlow',
     description: {
@@ -49,18 +61,6 @@ export const projects: Project[] = [
     technologies: ['Frontend', 'HTML', 'JS/TS'],
     imageUrl: '/vizin.png',
     repoUrl: 'https://github.com/rb-belarmino/vizin',
-    date: '2023'
-  },
-  {
-    id: 'bot-slack',
-    title: 'Slack Bot Integration',
-    description: {
-      pt: 'Integração automatizada via bot para o Slack visando agilizar operações e comunicação corporativa.',
-      en: 'Automated bot integration for Slack aimed at streamlining operations and corporate communication.'
-    },
-    technologies: ['Bot', 'Slack API', 'Node.js'],
-    imageUrl: '',
-    repoUrl: 'https://github.com/rb-belarmino/bot-slack',
     date: '2023'
   },
   {
